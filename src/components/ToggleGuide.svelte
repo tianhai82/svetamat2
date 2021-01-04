@@ -8,8 +8,10 @@
     let value = false;
     
     let textColor = "text-green-500";
-    let trueColor = "bg-red-600";
-    let falseColor = "bg-blue-600";
+    let trueColor = "bg-green-500";
+    let falseColor = "bg-gray-100";
+    let trueBgColor = "bg-green-300";
+    let falseBgColor = "bg-gray-400";
 
     let disabled = false;
   
@@ -68,6 +70,22 @@
       <div class="table-cell py-3 px-3 border-b border-gray-400">bg-red-100</div>
     </div>
     <div class="table-row">
+      <div class="table-cell py-3 px-3 border-b border-gray-400">trueBgColor</div>
+      <div class="table-cell py-3 px-3 border-b border-gray-400">
+        The background color of the toggle when value is true. Accepts Tailwindcss background color
+      </div>
+      <div class="table-cell py-3 px-3 border-b border-gray-400">string</div>
+      <div class="table-cell py-3 px-3 border-b border-gray-400">bg-red-600</div>
+    </div>
+    <div class="table-row">
+      <div class="table-cell py-3 px-3 border-b border-gray-400">falseBgColor</div>
+      <div class="table-cell py-3 px-3 border-b border-gray-400">
+        The background color of the toggle when value is false. Accepts Tailwindcss background color
+      </div>
+      <div class="table-cell py-3 px-3 border-b border-gray-400">string</div>
+      <div class="table-cell py-3 px-3 border-b border-gray-400">bg-red-100</div>
+    </div>
+    <div class="table-row">
       <div class="table-cell py-3 px-3 border-b border-gray-400">disabled</div>
       <div class="table-cell py-3 px-3 border-b border-gray-400">
         Whether the checkbox is disabled.
@@ -89,6 +107,8 @@
         textColor={textColor}
         trueColor={trueColor}
         falseColor={falseColor}
+        {trueBgColor}
+        {falseBgColor}
         disabled={disabled} />
     </div>
     <div class="border border-gray-500 rounded px-3 py-4 w-full">
@@ -112,6 +132,12 @@
         </div>
         <div class="px-4 pb-2">
           <Input hideDetails outlined label="falseColor" bind:value={falseColor} />
+        </div>
+        <div class="px-4 pb-2">
+          <Input hideDetails outlined label="trueBgColor" bind:value={trueBgColor} />
+        </div>
+        <div class="px-4 pb-2">
+          <Input hideDetails outlined label="falseBgColor" bind:value={falseBgColor} />
         </div>
       </div>
     </div>

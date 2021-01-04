@@ -16766,8 +16766,8 @@ let keywordsFunction = function (item) {
 
     function create_else_block$5(ctx) {
     	let current;
-    	const default_slot_template = /*#slots*/ ctx[7].default;
-    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[6], null);
+    	const default_slot_template = /*#slots*/ ctx[9].default;
+    	const default_slot = create_slot(default_slot_template, ctx, /*$$scope*/ ctx[8], null);
 
     	return {
     		c() {
@@ -16782,8 +16782,8 @@ let keywordsFunction = function (item) {
     		},
     		p(ctx, dirty) {
     			if (default_slot) {
-    				if (default_slot.p && dirty & /*$$scope*/ 64) {
-    					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[6], dirty, null, null);
+    				if (default_slot.p && dirty & /*$$scope*/ 256) {
+    					update_slot(default_slot, default_slot_template, ctx, /*$$scope*/ ctx[8], dirty, null, null);
     				}
     			}
     		},
@@ -16802,7 +16802,7 @@ let keywordsFunction = function (item) {
     	};
     }
 
-    // (44:4) {#if label}
+    // (47:4) {#if label}
     function create_if_block$b(ctx) {
     	let span;
     	let t;
@@ -16839,6 +16839,7 @@ let keywordsFunction = function (item) {
     	let input;
     	let t0;
     	let div0;
+    	let div0_class_value;
     	let t1;
     	let div1;
     	let div1_class_value;
@@ -16875,8 +16876,11 @@ let keywordsFunction = function (item) {
     			if_block.c();
     			attr(input, "type", "checkbox");
     			attr(input, "class", "hidden svelte-6kopti");
-    			input.disabled = /*disabled*/ ctx[5];
-    			attr(div0, "class", "toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner");
+    			input.disabled = /*disabled*/ ctx[7];
+
+    			attr(div0, "class", div0_class_value = "toggle__line w-10 h-4 " + (/*value*/ ctx[0]
+    			? /*trueBgColor*/ ctx[5]
+    			: /*falseBgColor*/ ctx[6]) + " rounded-full shadow-inner" + " svelte-6kopti");
 
     			attr(div1, "class", div1_class_value = "toggle__dot absolute w-6 h-6 " + (/*value*/ ctx[0]
     			? /*trueColor*/ ctx[3]
@@ -16885,11 +16889,11 @@ let keywordsFunction = function (item) {
     			attr(div2, "class", "relative");
     			attr(div3, "class", "ml-3");
 
-    			attr(label_1, "class", label_1_class_value = "flex items-center " + (/*disabled*/ ctx[5]
+    			attr(label_1, "class", label_1_class_value = "flex items-center " + (/*disabled*/ ctx[7]
     			? "cursor-not-allowed"
     			: "cursor-pointer"));
 
-    			attr(label_1, "disabled", /*disabled*/ ctx[5]);
+    			attr(label_1, "disabled", /*disabled*/ ctx[7]);
     		},
     		m(target, anchor) {
     			insert(target, label_1, anchor);
@@ -16906,17 +16910,23 @@ let keywordsFunction = function (item) {
     			current = true;
 
     			if (!mounted) {
-    				dispose = listen(input, "change", /*input_change_handler*/ ctx[8]);
+    				dispose = listen(input, "change", /*input_change_handler*/ ctx[10]);
     				mounted = true;
     			}
     		},
     		p(ctx, [dirty]) {
-    			if (!current || dirty & /*disabled*/ 32) {
-    				input.disabled = /*disabled*/ ctx[5];
+    			if (!current || dirty & /*disabled*/ 128) {
+    				input.disabled = /*disabled*/ ctx[7];
     			}
 
     			if (dirty & /*value*/ 1) {
     				input.checked = /*value*/ ctx[0];
+    			}
+
+    			if (!current || dirty & /*value, trueBgColor, falseBgColor*/ 97 && div0_class_value !== (div0_class_value = "toggle__line w-10 h-4 " + (/*value*/ ctx[0]
+    			? /*trueBgColor*/ ctx[5]
+    			: /*falseBgColor*/ ctx[6]) + " rounded-full shadow-inner" + " svelte-6kopti")) {
+    				attr(div0, "class", div0_class_value);
     			}
 
     			if (!current || dirty & /*value, trueColor, falseColor*/ 25 && div1_class_value !== (div1_class_value = "toggle__dot absolute w-6 h-6 " + (/*value*/ ctx[0]
@@ -16951,14 +16961,14 @@ let keywordsFunction = function (item) {
     				if_block.m(div3, null);
     			}
 
-    			if (!current || dirty & /*disabled*/ 32 && label_1_class_value !== (label_1_class_value = "flex items-center " + (/*disabled*/ ctx[5]
+    			if (!current || dirty & /*disabled*/ 128 && label_1_class_value !== (label_1_class_value = "flex items-center " + (/*disabled*/ ctx[7]
     			? "cursor-not-allowed"
     			: "cursor-pointer"))) {
     				attr(label_1, "class", label_1_class_value);
     			}
 
-    			if (!current || dirty & /*disabled*/ 32) {
-    				attr(label_1, "disabled", /*disabled*/ ctx[5]);
+    			if (!current || dirty & /*disabled*/ 128) {
+    				attr(label_1, "disabled", /*disabled*/ ctx[7]);
     			}
     		},
     		i(local) {
@@ -16987,6 +16997,8 @@ let keywordsFunction = function (item) {
     	let { textColor = "text-black" } = $$props;
     	let { trueColor = "bg-black" } = $$props;
     	let { falseColor = "bg-white" } = $$props;
+    	let { trueBgColor = trueColor } = $$props;
+    	let { falseBgColor = "bg-gray-400" } = $$props;
     	let { disabled = false } = $$props;
 
     	function input_change_handler() {
@@ -17000,8 +17012,10 @@ let keywordsFunction = function (item) {
     		if ("textColor" in $$props) $$invalidate(2, textColor = $$props.textColor);
     		if ("trueColor" in $$props) $$invalidate(3, trueColor = $$props.trueColor);
     		if ("falseColor" in $$props) $$invalidate(4, falseColor = $$props.falseColor);
-    		if ("disabled" in $$props) $$invalidate(5, disabled = $$props.disabled);
-    		if ("$$scope" in $$props) $$invalidate(6, $$scope = $$props.$$scope);
+    		if ("trueBgColor" in $$props) $$invalidate(5, trueBgColor = $$props.trueBgColor);
+    		if ("falseBgColor" in $$props) $$invalidate(6, falseBgColor = $$props.falseBgColor);
+    		if ("disabled" in $$props) $$invalidate(7, disabled = $$props.disabled);
+    		if ("$$scope" in $$props) $$invalidate(8, $$scope = $$props.$$scope);
     	};
 
     	return [
@@ -17010,6 +17024,8 @@ let keywordsFunction = function (item) {
     		textColor,
     		trueColor,
     		falseColor,
+    		trueBgColor,
+    		falseBgColor,
     		disabled,
     		$$scope,
     		slots,
@@ -17027,7 +17043,9 @@ let keywordsFunction = function (item) {
     			textColor: 2,
     			trueColor: 3,
     			falseColor: 4,
-    			disabled: 5
+    			trueBgColor: 5,
+    			falseBgColor: 6,
+    			disabled: 7
     		});
     	}
     }
@@ -17053,51 +17071,59 @@ let keywordsFunction = function (item) {
     function create_fragment$v(ctx) {
     	let h2;
     	let t1;
-    	let div35;
-    	let t59;
-    	let div47;
+    	let div45;
+    	let t75;
+    	let div59;
     	let h31;
-    	let div36;
-    	let t61;
+    	let div46;
+    	let t77;
     	let checkbox0;
     	let updating_checked;
-    	let t62;
-    	let div37;
+    	let t78;
+    	let div47;
     	let toggle;
     	let updating_value;
-    	let t63;
-    	let div46;
-    	let div40;
-    	let div38;
+    	let t79;
+    	let div58;
+    	let div50;
+    	let div48;
     	let checkbox1;
     	let updating_checked_1;
-    	let t64;
-    	let div39;
+    	let t80;
+    	let div49;
     	let checkbox2;
     	let updating_checked_2;
-    	let t65;
-    	let div45;
-    	let div41;
+    	let t81;
+    	let div57;
+    	let div51;
     	let input0;
     	let updating_value_1;
-    	let t66;
-    	let div42;
+    	let t82;
+    	let div52;
     	let input1;
     	let updating_value_2;
-    	let t67;
-    	let div43;
+    	let t83;
+    	let div53;
     	let input2;
     	let updating_value_3;
-    	let t68;
-    	let div44;
+    	let t84;
+    	let div54;
     	let input3;
     	let updating_value_4;
-    	let t69;
+    	let t85;
+    	let div55;
+    	let input4;
+    	let updating_value_5;
+    	let t86;
+    	let div56;
+    	let input5;
+    	let updating_value_6;
+    	let t87;
     	let pre;
     	let current;
 
     	function checkbox0_checked_binding(value) {
-    		/*checkbox0_checked_binding*/ ctx[7].call(null, value);
+    		/*checkbox0_checked_binding*/ ctx[9].call(null, value);
     	}
 
     	let checkbox0_props = {
@@ -17105,15 +17131,15 @@ let keywordsFunction = function (item) {
     		$$scope: { ctx }
     	};
 
-    	if (/*showCode*/ ctx[6] !== void 0) {
-    		checkbox0_props.checked = /*showCode*/ ctx[6];
+    	if (/*showCode*/ ctx[8] !== void 0) {
+    		checkbox0_props.checked = /*showCode*/ ctx[8];
     	}
 
     	checkbox0 = new Checkbox({ props: checkbox0_props });
     	binding_callbacks.push(() => bind(checkbox0, "checked", checkbox0_checked_binding));
 
     	function toggle_value_binding(value) {
-    		/*toggle_value_binding*/ ctx[8].call(null, value);
+    		/*toggle_value_binding*/ ctx[10].call(null, value);
     	}
 
     	let toggle_props = {
@@ -17121,7 +17147,9 @@ let keywordsFunction = function (item) {
     		textColor: /*textColor*/ ctx[2],
     		trueColor: /*trueColor*/ ctx[3],
     		falseColor: /*falseColor*/ ctx[4],
-    		disabled: /*disabled*/ ctx[5]
+    		trueBgColor: /*trueBgColor*/ ctx[5],
+    		falseBgColor: /*falseBgColor*/ ctx[6],
+    		disabled: /*disabled*/ ctx[7]
     	};
 
     	if (/*value*/ ctx[1] !== void 0) {
@@ -17132,7 +17160,7 @@ let keywordsFunction = function (item) {
     	binding_callbacks.push(() => bind(toggle, "value", toggle_value_binding));
 
     	function checkbox1_checked_binding(value) {
-    		/*checkbox1_checked_binding*/ ctx[9].call(null, value);
+    		/*checkbox1_checked_binding*/ ctx[11].call(null, value);
     	}
 
     	let checkbox1_props = { label: "value" };
@@ -17145,20 +17173,20 @@ let keywordsFunction = function (item) {
     	binding_callbacks.push(() => bind(checkbox1, "checked", checkbox1_checked_binding));
 
     	function checkbox2_checked_binding(value) {
-    		/*checkbox2_checked_binding*/ ctx[10].call(null, value);
+    		/*checkbox2_checked_binding*/ ctx[12].call(null, value);
     	}
 
     	let checkbox2_props = { label: "disabled" };
 
-    	if (/*disabled*/ ctx[5] !== void 0) {
-    		checkbox2_props.checked = /*disabled*/ ctx[5];
+    	if (/*disabled*/ ctx[7] !== void 0) {
+    		checkbox2_props.checked = /*disabled*/ ctx[7];
     	}
 
     	checkbox2 = new Checkbox({ props: checkbox2_props });
     	binding_callbacks.push(() => bind(checkbox2, "checked", checkbox2_checked_binding));
 
     	function input0_value_binding(value) {
-    		/*input0_value_binding*/ ctx[11].call(null, value);
+    		/*input0_value_binding*/ ctx[13].call(null, value);
     	}
 
     	let input0_props = {
@@ -17175,7 +17203,7 @@ let keywordsFunction = function (item) {
     	binding_callbacks.push(() => bind(input0, "value", input0_value_binding));
 
     	function input1_value_binding(value) {
-    		/*input1_value_binding*/ ctx[12].call(null, value);
+    		/*input1_value_binding*/ ctx[14].call(null, value);
     	}
 
     	let input1_props = {
@@ -17192,7 +17220,7 @@ let keywordsFunction = function (item) {
     	binding_callbacks.push(() => bind(input1, "value", input1_value_binding));
 
     	function input2_value_binding(value) {
-    		/*input2_value_binding*/ ctx[13].call(null, value);
+    		/*input2_value_binding*/ ctx[15].call(null, value);
     	}
 
     	let input2_props = {
@@ -17209,7 +17237,7 @@ let keywordsFunction = function (item) {
     	binding_callbacks.push(() => bind(input2, "value", input2_value_binding));
 
     	function input3_value_binding(value) {
-    		/*input3_value_binding*/ ctx[14].call(null, value);
+    		/*input3_value_binding*/ ctx[16].call(null, value);
     	}
 
     	let input3_props = {
@@ -17225,14 +17253,48 @@ let keywordsFunction = function (item) {
     	input3 = new Input({ props: input3_props });
     	binding_callbacks.push(() => bind(input3, "value", input3_value_binding));
 
+    	function input4_value_binding(value) {
+    		/*input4_value_binding*/ ctx[17].call(null, value);
+    	}
+
+    	let input4_props = {
+    		hideDetails: true,
+    		outlined: true,
+    		label: "trueBgColor"
+    	};
+
+    	if (/*trueBgColor*/ ctx[5] !== void 0) {
+    		input4_props.value = /*trueBgColor*/ ctx[5];
+    	}
+
+    	input4 = new Input({ props: input4_props });
+    	binding_callbacks.push(() => bind(input4, "value", input4_value_binding));
+
+    	function input5_value_binding(value) {
+    		/*input5_value_binding*/ ctx[18].call(null, value);
+    	}
+
+    	let input5_props = {
+    		hideDetails: true,
+    		outlined: true,
+    		label: "falseBgColor"
+    	};
+
+    	if (/*falseBgColor*/ ctx[6] !== void 0) {
+    		input5_props.value = /*falseBgColor*/ ctx[6];
+    	}
+
+    	input5 = new Input({ props: input5_props });
+    	binding_callbacks.push(() => bind(input5, "value", input5_value_binding));
+
     	return {
     		c() {
     			h2 = element("h2");
     			h2.textContent = "Toggle";
     			t1 = space();
-    			div35 = element("div");
+    			div45 = element("div");
 
-    			div35.innerHTML = `<h3 class="text-lg font-bold ml-3 mt-5 mb-3">Properties</h3> 
+    			div45.innerHTML = `<h3 class="text-lg font-bold ml-3 mt-5 mb-3">Properties</h3> 
     <div class="table-row font-bold"><div class="table-cell py-3 px-3 border-b border-gray-400">Prop</div> 
       <div class="table-cell py-3 px-3 border-b border-gray-400">Description</div> 
       <div class="table-cell py-3 px-3 border-b border-gray-400">Type</div> 
@@ -17258,111 +17320,133 @@ let keywordsFunction = function (item) {
       <div class="table-cell py-3 px-3 border-b border-gray-400">The color of the toggle when value is false. Accepts Tailwindcss background color</div> 
       <div class="table-cell py-3 px-3 border-b border-gray-400">string</div> 
       <div class="table-cell py-3 px-3 border-b border-gray-400">bg-red-100</div></div> 
+    <div class="table-row"><div class="table-cell py-3 px-3 border-b border-gray-400">trueBgColor</div> 
+      <div class="table-cell py-3 px-3 border-b border-gray-400">The background color of the toggle when value is true. Accepts Tailwindcss background color</div> 
+      <div class="table-cell py-3 px-3 border-b border-gray-400">string</div> 
+      <div class="table-cell py-3 px-3 border-b border-gray-400">bg-red-600</div></div> 
+    <div class="table-row"><div class="table-cell py-3 px-3 border-b border-gray-400">falseBgColor</div> 
+      <div class="table-cell py-3 px-3 border-b border-gray-400">The background color of the toggle when value is false. Accepts Tailwindcss background color</div> 
+      <div class="table-cell py-3 px-3 border-b border-gray-400">string</div> 
+      <div class="table-cell py-3 px-3 border-b border-gray-400">bg-red-100</div></div> 
     <div class="table-row"><div class="table-cell py-3 px-3 border-b border-gray-400">disabled</div> 
       <div class="table-cell py-3 px-3 border-b border-gray-400">Whether the checkbox is disabled.</div> 
       <div class="table-cell py-3 px-3 border-b border-gray-400">boolean</div> 
       <div class="table-cell py-3 px-3 border-b border-gray-400">false</div></div>`;
 
-    			t59 = space();
-    			div47 = element("div");
+    			t75 = space();
+    			div59 = element("div");
     			h31 = element("h3");
-    			div36 = element("div");
-    			div36.textContent = "Demo";
-    			t61 = space();
-    			create_component(checkbox0.$$.fragment);
-    			t62 = space();
-    			div37 = element("div");
-    			create_component(toggle.$$.fragment);
-    			t63 = space();
     			div46 = element("div");
-    			div40 = element("div");
-    			div38 = element("div");
+    			div46.textContent = "Demo";
+    			t77 = space();
+    			create_component(checkbox0.$$.fragment);
+    			t78 = space();
+    			div47 = element("div");
+    			create_component(toggle.$$.fragment);
+    			t79 = space();
+    			div58 = element("div");
+    			div50 = element("div");
+    			div48 = element("div");
     			create_component(checkbox1.$$.fragment);
-    			t64 = space();
-    			div39 = element("div");
+    			t80 = space();
+    			div49 = element("div");
     			create_component(checkbox2.$$.fragment);
-    			t65 = space();
-    			div45 = element("div");
-    			div41 = element("div");
+    			t81 = space();
+    			div57 = element("div");
+    			div51 = element("div");
     			create_component(input0.$$.fragment);
-    			t66 = space();
-    			div42 = element("div");
+    			t82 = space();
+    			div52 = element("div");
     			create_component(input1.$$.fragment);
-    			t67 = space();
-    			div43 = element("div");
+    			t83 = space();
+    			div53 = element("div");
     			create_component(input2.$$.fragment);
-    			t68 = space();
-    			div44 = element("div");
+    			t84 = space();
+    			div54 = element("div");
     			create_component(input3.$$.fragment);
-    			t69 = space();
+    			t85 = space();
+    			div55 = element("div");
+    			create_component(input4.$$.fragment);
+    			t86 = space();
+    			div56 = element("div");
+    			create_component(input5.$$.fragment);
+    			t87 = space();
     			pre = element("pre");
     			pre.textContent = `${``}`;
     			attr(h2, "class", "text-xl ml-4 font-semibold my-6");
-    			attr(div35, "class", "bg-gray-200 rounded my-4 px-4 table w-full");
-    			attr(div36, "class", "text-lg font-bold");
+    			attr(div45, "class", "bg-gray-200 rounded my-4 px-4 table w-full");
+    			attr(div46, "class", "text-lg font-bold");
     			attr(h31, "class", "mx-2 mb-2 flex justify-between");
-    			attr(div37, "class", "mt-2 mb-1");
-    			attr(div38, "class", "px-4");
-    			attr(div39, "class", "px-4");
-    			attr(div40, "class", "w-full flex flex-row flex-wrap");
-    			attr(div41, "class", "px-4 pb-2");
-    			attr(div42, "class", "px-4 pb-2");
-    			attr(div43, "class", "px-4 pb-2");
-    			attr(div44, "class", "px-4 pb-2");
-    			attr(div45, "class", "w-full flex flex-row flex-wrap");
-    			attr(div46, "class", "border border-gray-500 rounded px-3 py-4 w-full");
-    			attr(div47, "class", "bg-gray-200 rounded p-4 w-full");
+    			attr(div47, "class", "mt-2 mb-1");
+    			attr(div48, "class", "px-4");
+    			attr(div49, "class", "px-4");
+    			attr(div50, "class", "w-full flex flex-row flex-wrap");
+    			attr(div51, "class", "px-4 pb-2");
+    			attr(div52, "class", "px-4 pb-2");
+    			attr(div53, "class", "px-4 pb-2");
+    			attr(div54, "class", "px-4 pb-2");
+    			attr(div55, "class", "px-4 pb-2");
+    			attr(div56, "class", "px-4 pb-2");
+    			attr(div57, "class", "w-full flex flex-row flex-wrap");
+    			attr(div58, "class", "border border-gray-500 rounded px-3 py-4 w-full");
+    			attr(div59, "class", "bg-gray-200 rounded p-4 w-full");
     			attr(pre, "class", "my-2 bg-gray-200 rounded p-5 font-light");
-    			toggle_class(pre, "hidden", !/*showCode*/ ctx[6]);
+    			toggle_class(pre, "hidden", !/*showCode*/ ctx[8]);
     		},
     		m(target, anchor) {
     			insert(target, h2, anchor);
     			insert(target, t1, anchor);
-    			insert(target, div35, anchor);
-    			insert(target, t59, anchor);
-    			insert(target, div47, anchor);
-    			append(div47, h31);
-    			append(h31, div36);
-    			append(h31, t61);
+    			insert(target, div45, anchor);
+    			insert(target, t75, anchor);
+    			insert(target, div59, anchor);
+    			append(div59, h31);
+    			append(h31, div46);
+    			append(h31, t77);
     			mount_component(checkbox0, h31, null);
-    			append(div47, t62);
-    			append(div47, div37);
-    			mount_component(toggle, div37, null);
-    			append(div47, t63);
-    			append(div47, div46);
-    			append(div46, div40);
-    			append(div40, div38);
-    			mount_component(checkbox1, div38, null);
-    			append(div40, t64);
-    			append(div40, div39);
-    			mount_component(checkbox2, div39, null);
-    			append(div46, t65);
-    			append(div46, div45);
-    			append(div45, div41);
-    			mount_component(input0, div41, null);
-    			append(div45, t66);
-    			append(div45, div42);
-    			mount_component(input1, div42, null);
-    			append(div45, t67);
-    			append(div45, div43);
-    			mount_component(input2, div43, null);
-    			append(div45, t68);
-    			append(div45, div44);
-    			mount_component(input3, div44, null);
-    			insert(target, t69, anchor);
+    			append(div59, t78);
+    			append(div59, div47);
+    			mount_component(toggle, div47, null);
+    			append(div59, t79);
+    			append(div59, div58);
+    			append(div58, div50);
+    			append(div50, div48);
+    			mount_component(checkbox1, div48, null);
+    			append(div50, t80);
+    			append(div50, div49);
+    			mount_component(checkbox2, div49, null);
+    			append(div58, t81);
+    			append(div58, div57);
+    			append(div57, div51);
+    			mount_component(input0, div51, null);
+    			append(div57, t82);
+    			append(div57, div52);
+    			mount_component(input1, div52, null);
+    			append(div57, t83);
+    			append(div57, div53);
+    			mount_component(input2, div53, null);
+    			append(div57, t84);
+    			append(div57, div54);
+    			mount_component(input3, div54, null);
+    			append(div57, t85);
+    			append(div57, div55);
+    			mount_component(input4, div55, null);
+    			append(div57, t86);
+    			append(div57, div56);
+    			mount_component(input5, div56, null);
+    			insert(target, t87, anchor);
     			insert(target, pre, anchor);
     			current = true;
     		},
     		p(ctx, [dirty]) {
     			const checkbox0_changes = {};
 
-    			if (dirty & /*$$scope*/ 32768) {
+    			if (dirty & /*$$scope*/ 524288) {
     				checkbox0_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_checked && dirty & /*showCode*/ 64) {
+    			if (!updating_checked && dirty & /*showCode*/ 256) {
     				updating_checked = true;
-    				checkbox0_changes.checked = /*showCode*/ ctx[6];
+    				checkbox0_changes.checked = /*showCode*/ ctx[8];
     				add_flush_callback(() => updating_checked = false);
     			}
 
@@ -17372,7 +17456,9 @@ let keywordsFunction = function (item) {
     			if (dirty & /*textColor*/ 4) toggle_changes.textColor = /*textColor*/ ctx[2];
     			if (dirty & /*trueColor*/ 8) toggle_changes.trueColor = /*trueColor*/ ctx[3];
     			if (dirty & /*falseColor*/ 16) toggle_changes.falseColor = /*falseColor*/ ctx[4];
-    			if (dirty & /*disabled*/ 32) toggle_changes.disabled = /*disabled*/ ctx[5];
+    			if (dirty & /*trueBgColor*/ 32) toggle_changes.trueBgColor = /*trueBgColor*/ ctx[5];
+    			if (dirty & /*falseBgColor*/ 64) toggle_changes.falseBgColor = /*falseBgColor*/ ctx[6];
+    			if (dirty & /*disabled*/ 128) toggle_changes.disabled = /*disabled*/ ctx[7];
 
     			if (!updating_value && dirty & /*value*/ 2) {
     				updating_value = true;
@@ -17392,9 +17478,9 @@ let keywordsFunction = function (item) {
     			checkbox1.$set(checkbox1_changes);
     			const checkbox2_changes = {};
 
-    			if (!updating_checked_2 && dirty & /*disabled*/ 32) {
+    			if (!updating_checked_2 && dirty & /*disabled*/ 128) {
     				updating_checked_2 = true;
-    				checkbox2_changes.checked = /*disabled*/ ctx[5];
+    				checkbox2_changes.checked = /*disabled*/ ctx[7];
     				add_flush_callback(() => updating_checked_2 = false);
     			}
 
@@ -17435,9 +17521,27 @@ let keywordsFunction = function (item) {
     			}
 
     			input3.$set(input3_changes);
+    			const input4_changes = {};
 
-    			if (dirty & /*showCode*/ 64) {
-    				toggle_class(pre, "hidden", !/*showCode*/ ctx[6]);
+    			if (!updating_value_5 && dirty & /*trueBgColor*/ 32) {
+    				updating_value_5 = true;
+    				input4_changes.value = /*trueBgColor*/ ctx[5];
+    				add_flush_callback(() => updating_value_5 = false);
+    			}
+
+    			input4.$set(input4_changes);
+    			const input5_changes = {};
+
+    			if (!updating_value_6 && dirty & /*falseBgColor*/ 64) {
+    				updating_value_6 = true;
+    				input5_changes.value = /*falseBgColor*/ ctx[6];
+    				add_flush_callback(() => updating_value_6 = false);
+    			}
+
+    			input5.$set(input5_changes);
+
+    			if (dirty & /*showCode*/ 256) {
+    				toggle_class(pre, "hidden", !/*showCode*/ ctx[8]);
     			}
     		},
     		i(local) {
@@ -17450,6 +17554,8 @@ let keywordsFunction = function (item) {
     			transition_in(input1.$$.fragment, local);
     			transition_in(input2.$$.fragment, local);
     			transition_in(input3.$$.fragment, local);
+    			transition_in(input4.$$.fragment, local);
+    			transition_in(input5.$$.fragment, local);
     			current = true;
     		},
     		o(local) {
@@ -17461,14 +17567,16 @@ let keywordsFunction = function (item) {
     			transition_out(input1.$$.fragment, local);
     			transition_out(input2.$$.fragment, local);
     			transition_out(input3.$$.fragment, local);
+    			transition_out(input4.$$.fragment, local);
+    			transition_out(input5.$$.fragment, local);
     			current = false;
     		},
     		d(detaching) {
     			if (detaching) detach(h2);
     			if (detaching) detach(t1);
-    			if (detaching) detach(div35);
-    			if (detaching) detach(t59);
-    			if (detaching) detach(div47);
+    			if (detaching) detach(div45);
+    			if (detaching) detach(t75);
+    			if (detaching) detach(div59);
     			destroy_component(checkbox0);
     			destroy_component(toggle);
     			destroy_component(checkbox1);
@@ -17477,7 +17585,9 @@ let keywordsFunction = function (item) {
     			destroy_component(input1);
     			destroy_component(input2);
     			destroy_component(input3);
-    			if (detaching) detach(t69);
+    			destroy_component(input4);
+    			destroy_component(input5);
+    			if (detaching) detach(t87);
     			if (detaching) detach(pre);
     		}
     	};
@@ -17487,14 +17597,16 @@ let keywordsFunction = function (item) {
     	let label = "Toggle with label";
     	let value = false;
     	let textColor = "text-green-500";
-    	let trueColor = "bg-red-600";
-    	let falseColor = "bg-blue-600";
+    	let trueColor = "bg-green-500";
+    	let falseColor = "bg-gray-100";
+    	let trueBgColor = "bg-green-300";
+    	let falseBgColor = "bg-gray-400";
     	let disabled = false;
     	let showCode = false;
 
     	function checkbox0_checked_binding(value) {
     		showCode = value;
-    		$$invalidate(6, showCode);
+    		$$invalidate(8, showCode);
     	}
 
     	function toggle_value_binding(value$1) {
@@ -17509,7 +17621,7 @@ let keywordsFunction = function (item) {
 
     	function checkbox2_checked_binding(value) {
     		disabled = value;
-    		$$invalidate(5, disabled);
+    		$$invalidate(7, disabled);
     	}
 
     	function input0_value_binding(value) {
@@ -17532,12 +17644,24 @@ let keywordsFunction = function (item) {
     		$$invalidate(4, falseColor);
     	}
 
+    	function input4_value_binding(value) {
+    		trueBgColor = value;
+    		$$invalidate(5, trueBgColor);
+    	}
+
+    	function input5_value_binding(value) {
+    		falseBgColor = value;
+    		$$invalidate(6, falseBgColor);
+    	}
+
     	return [
     		label,
     		value,
     		textColor,
     		trueColor,
     		falseColor,
+    		trueBgColor,
+    		falseBgColor,
     		disabled,
     		showCode,
     		checkbox0_checked_binding,
@@ -17547,7 +17671,9 @@ let keywordsFunction = function (item) {
     		input0_value_binding,
     		input1_value_binding,
     		input2_value_binding,
-    		input3_value_binding
+    		input3_value_binding,
+    		input4_value_binding,
+    		input5_value_binding
     	];
     }
 
@@ -17678,7 +17804,7 @@ let keywordsFunction = function (item) {
     			if (switch_instance) create_component(switch_instance.$$.fragment);
     			attr(div0, "class", "flex items-center");
     			attr(a, "class", "flex items-center mr-6");
-    			attr(a, "href", "https://github.com/tianhai82/svetamat");
+    			attr(a, "href", "https://github.com/tianhai82/svetamat2");
     			attr(div1, "class", "bg-gray-100 flex-shrink-0 h-16 mt-0 z-40 flex items-center\r\n      justify-between elevation-4 static");
     			attr(ul, "class", "mx-3 py-3");
     			attr(div2, "class", "h-full w-56 bg-gray-700 text-gray-100 overflow-y-auto flex-shrink-0");

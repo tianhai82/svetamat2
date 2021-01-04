@@ -8,6 +8,8 @@
     export let textColor = 'text-black';
     export let trueColor = 'bg-black';
     export let falseColor = 'bg-white';
+    export let trueBgColor = trueColor;
+    export let falseBgColor = 'bg-gray-400';
 
     export let disabled = false;
     
@@ -35,10 +37,11 @@ input:checked ~ .toggle__dot {
 }
 </style>
 
+<!-- svelte-ignore a11y-label-has-associated-control -->
 <label class="flex items-center {disabled?'cursor-not-allowed':'cursor-pointer'}" {disabled}>
   <div class="relative">
     <input type="checkbox" class="hidden" disabled={disabled} bind:checked={value}/>
-    <div class="toggle__line w-10 h-4 bg-gray-400 rounded-full shadow-inner"></div>
+    <div class="toggle__line w-10 h-4 {value?trueBgColor:falseBgColor} rounded-full shadow-inner"></div>
     <div class="toggle__dot absolute w-6 h-6 {value?trueColor:falseColor} rounded-full shadow inset-y-0 left-0"></div>
   </div>
     <!-- label -->
