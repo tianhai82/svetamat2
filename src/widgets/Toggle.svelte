@@ -6,9 +6,9 @@
     export let label = '';
     export let value = false;
     export let textColor = 'text-black';
-    export let trueColor = 'bg-black';
-    export let falseColor = 'bg-white';
-    export let trueBgColor = trueColor;
+    export let trueColor = 'bg-green-500';
+    export let falseColor = 'bg-gray-100';
+    export let trueBgColor = "bg-green-300";
     export let falseBgColor = 'bg-gray-400';
 
     export let disabled = false;
