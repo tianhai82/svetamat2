@@ -49,7 +49,7 @@
     </div>
     <a
       class="flex items-center mr-6"
-      href="https://github.com/tianhai82/svetamat">
+      href="https://github.com/tianhai82/svetamat2">
       <Github />
     </a>
   </div>
