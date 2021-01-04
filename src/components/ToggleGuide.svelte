@@ -146,6 +146,14 @@
   <pre
     class:hidden={!showCode}
     class="my-2 bg-gray-200 rounded p-5 font-light">
-  {``}
+  {`<Toggle
+    label={label}
+    bind:value
+    textColor={textColor}
+    trueColor={trueColor}
+    falseColor={falseColor}
+    {trueBgColor}
+    {falseBgColor}
+    disabled={disabled} />`}
   </pre>
   

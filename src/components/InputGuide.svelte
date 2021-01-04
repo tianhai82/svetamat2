@@ -297,7 +297,11 @@
 {`<Input
     {label}
     bind:value
+    {password}
+    {date}
     {number}
+    {min}
+    {max}
     {borderColor}
     {labelColor}
     {helperText}
