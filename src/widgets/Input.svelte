@@ -17,11 +17,14 @@ export let hideDetails = false;
 export let readonly = false;
 export let password = false;
 export let date = false;
+export let min = null;
+export let max = null;
 
 </script>
 {#if !outlined}
   <InputStd {label} bind:value={value} {borderColor} {labelColor} {helperText} {icon}
             {number} {clearable} {disabled} {hideDetails} {readonly} {password} {date}
+            {min} {max}
             on:focus
             on:blur
             on:keydown
@@ -32,6 +35,7 @@ export let date = false;
 {:else}
   <InputOutlined {label} bind:value={value} {borderColor} {labelColor} {helperText} {icon}
                  {number} {clearable} {disabled} {hideDetails} {readonly} {password} {date}
+                 {min} {max}
                  on:focus
                  on:blur
                  on:keydown

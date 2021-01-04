@@ -18,6 +18,8 @@
   let readonly = false;
   let password = false;
   let date = false;
+  let min = null;
+  let max = null;
 
   let showCode = false;
 </script>
@@ -55,6 +57,22 @@
     </div>
     <div class="table-cell py-3 px-3 border-b border-gray-400">boolean</div>
     <div class="table-cell py-3 px-3 border-b border-gray-400">false</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell py-3 px-3 border-b border-gray-400">min</div>
+    <div class="table-cell py-3 px-3 border-b border-gray-400">
+      Specifies the minimum value
+    </div>
+    <div class="table-cell py-3 px-3 border-b border-gray-400">string</div>
+    <div class="table-cell py-3 px-3 border-b border-gray-400">null</div>
+  </div>
+  <div class="table-row">
+    <div class="table-cell py-3 px-3 border-b border-gray-400">max</div>
+    <div class="table-cell py-3 px-3 border-b border-gray-400">
+      Specifies the maximum value
+    </div>
+    <div class="table-cell py-3 px-3 border-b border-gray-400">string</div>
+    <div class="table-cell py-3 px-3 border-b border-gray-400">null</div>
   </div>
   <div class="table-row">
     <div class="table-cell py-3 px-3 border-b border-gray-400">borderColor</div>
@@ -177,6 +195,8 @@
       {password}
       {date}
       {number}
+      {min}
+      {max}
       {borderColor}
       {labelColor}
       {helperText}
@@ -252,6 +272,20 @@
           outlined
           label="helperTextColor"
           bind:value={helperTextColor} />
+      </div>
+      <div class="px-4 pb-2">
+        <Input
+          hideDetails
+          outlined
+          label="min"
+          bind:value={min} />
+      </div>
+      <div class="px-4 pb-2">
+        <Input
+          hideDetails
+          outlined
+          label="max"
+          bind:value={max} />
       </div>
     </div>
   </div>

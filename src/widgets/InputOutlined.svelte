@@ -19,6 +19,8 @@
   export let readonly = false;
   export let password = false;
   export let date = false;
+  export let min = null;
+  export let max = null;
 
   let hasFocus = false;
   let iconCls = "";
@@ -136,6 +138,8 @@
         {readonly}
         {value}
         {disabled}
+        {min}
+        {max}
         on:input={handleInput}
         on:focus={() => (hasFocus = true)}
         on:blur={() => (hasFocus = false)}

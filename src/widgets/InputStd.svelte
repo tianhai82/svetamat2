@@ -19,6 +19,8 @@
   export let readonly = false;
   export let password = false;
   export let date = false;
+  export let min = null;
+  export let max = null;
 
   let hasFocus = false;
   let iconCls = "";
@@ -100,6 +102,7 @@
     class:opacity-50={disabled}
     class:disabled
     class={hasFocus ? `relative rounded-t border-b-2 bg-gray-300 ${borderColor}` : `relative rounded-t border-b border-gray-500${disabled ? '' : ' hover:border-gray-900 hover:bg-gray-100'}`}>
+    <!-- svelte-ignore a11y-label-has-associated-control -->
     <label
       style={`${labelTopPadding} max-width:${boxWidth}px;`}
       class={`${labelCls} truncate`}>
@@ -111,6 +114,8 @@
         {readonly}
         {value}
         {disabled}
+        {min}
+        {max}
         on:input={handleInput}
         on:focus={() => (hasFocus = true)}
         on:blur={() => (hasFocus = false)}

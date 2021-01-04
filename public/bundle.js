@@ -1889,7 +1889,7 @@ var app = (function () {
     		c() {
     			div = element("div");
     			t = text(/*helperText*/ ctx[3]);
-    			attr(div, "class", div_class_value = "" + (null_to_empty(/*helperTextCls*/ ctx[16]) + " svelte-1cjqtag"));
+    			attr(div, "class", div_class_value = "" + (null_to_empty(/*helperTextCls*/ ctx[18]) + " svelte-1cjqtag"));
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -1898,7 +1898,7 @@ var app = (function () {
     		p(ctx, dirty) {
     			if (dirty[0] & /*helperText*/ 8) set_data(t, /*helperText*/ ctx[3]);
 
-    			if (dirty[0] & /*helperTextCls*/ 65536 && div_class_value !== (div_class_value = "" + (null_to_empty(/*helperTextCls*/ ctx[16]) + " svelte-1cjqtag"))) {
+    			if (dirty[0] & /*helperTextCls*/ 262144 && div_class_value !== (div_class_value = "" + (null_to_empty(/*helperTextCls*/ ctx[18]) + " svelte-1cjqtag"))) {
     				attr(div, "class", div_class_value);
     			}
     		},
@@ -1952,13 +1952,15 @@ var app = (function () {
     			t5 = text(/*icon*/ ctx[4]);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr(label_1, "style", label_1_style_value = `${/*labelTopPadding*/ ctx[15]} max-width:${/*boxWidth*/ ctx[12]}px;`);
-    			attr(label_1, "class", label_1_class_value = "" + (null_to_empty(`${/*labelCls*/ ctx[13]} truncate`) + " svelte-1cjqtag"));
-    			attr(input, "type", /*type*/ ctx[10]);
+    			attr(label_1, "style", label_1_style_value = `${/*labelTopPadding*/ ctx[17]} max-width:${/*boxWidth*/ ctx[14]}px;`);
+    			attr(label_1, "class", label_1_class_value = "" + (null_to_empty(`${/*labelCls*/ ctx[15]} truncate`) + " svelte-1cjqtag"));
+    			attr(input, "type", /*type*/ ctx[12]);
     			input.readOnly = /*readonly*/ ctx[8];
     			input.value = /*value*/ ctx[0];
     			input.disabled = /*disabled*/ ctx[6];
-    			attr(input, "style", /*inputPadBottom*/ ctx[14]);
+    			attr(input, "min", /*min*/ ctx[9]);
+    			attr(input, "max", /*max*/ ctx[10]);
+    			attr(input, "style", /*inputPadBottom*/ ctx[16]);
     			attr(input, "class", "pt-6 appearance-none bg-transparent border-none w-full\r\n        text-gray-800 px-2 focus:outline-none");
 
     			attr(i0, "class", i0_class_value = /*clearable*/ ctx[5] && !/*disabled*/ ctx[6]
@@ -1966,12 +1968,12 @@ var app = (function () {
     			: "");
 
     			toggle_class(i0, "hidden", !/*clearable*/ ctx[5] || /*disabled*/ ctx[6]);
-    			attr(i1, "class", i1_class_value = "" + (null_to_empty(/*iconCls*/ ctx[11]) + " svelte-1cjqtag"));
+    			attr(i1, "class", i1_class_value = "" + (null_to_empty(/*iconCls*/ ctx[13]) + " svelte-1cjqtag"));
     			toggle_class(i1, "opacity-50", /*disabled*/ ctx[6]);
     			attr(div0, "class", "float-right flex items-center mr-2 mt-3");
     			attr(div1, "class", "flex justify-between");
 
-    			attr(div2, "class", div2_class_value = "" + (null_to_empty(/*hasFocus*/ ctx[9]
+    			attr(div2, "class", div2_class_value = "" + (null_to_empty(/*hasFocus*/ ctx[11]
     			? `relative rounded-t border-b-2 bg-gray-300 ${/*borderColor*/ ctx[2]}`
     			: `relative rounded-t border-b border-gray-500${/*disabled*/ ctx[6]
 				? ""
@@ -1980,7 +1982,7 @@ var app = (function () {
     			toggle_class(div2, "opacity-50", /*disabled*/ ctx[6]);
     			toggle_class(div2, "disabled", /*disabled*/ ctx[6]);
     			attr(div3, "class", "flex flex-col");
-    			add_render_callback(() => /*div3_elementresize_handler*/ ctx[34].call(div3));
+    			add_render_callback(() => /*div3_elementresize_handler*/ ctx[36].call(div3));
     		},
     		m(target, anchor) {
     			insert(target, div3, anchor);
@@ -1999,19 +2001,19 @@ var app = (function () {
     			append(i1, t5);
     			append(div3, t6);
     			if (if_block) if_block.m(div3, null);
-    			div3_resize_listener = add_resize_listener(div3, /*div3_elementresize_handler*/ ctx[34].bind(div3));
+    			div3_resize_listener = add_resize_listener(div3, /*div3_elementresize_handler*/ ctx[36].bind(div3));
 
     			if (!mounted) {
     				dispose = [
-    					listen(input, "input", /*handleInput*/ ctx[18]),
-    					listen(input, "focus", /*focus_handler_1*/ ctx[32]),
-    					listen(input, "blur", /*blur_handler_1*/ ctx[33]),
-    					listen(input, "focus", /*focus_handler*/ ctx[27]),
-    					listen(input, "blur", /*blur_handler*/ ctx[28]),
-    					listen(input, "keydown", /*keydown_handler*/ ctx[29]),
-    					listen(input, "keyup", /*keyup_handler*/ ctx[30]),
-    					listen(input, "click", /*click_handler*/ ctx[31]),
-    					listen(i0, "click", /*clear*/ ctx[19])
+    					listen(input, "input", /*handleInput*/ ctx[20]),
+    					listen(input, "focus", /*focus_handler_1*/ ctx[34]),
+    					listen(input, "blur", /*blur_handler_1*/ ctx[35]),
+    					listen(input, "focus", /*focus_handler*/ ctx[29]),
+    					listen(input, "blur", /*blur_handler*/ ctx[30]),
+    					listen(input, "keydown", /*keydown_handler*/ ctx[31]),
+    					listen(input, "keyup", /*keyup_handler*/ ctx[32]),
+    					listen(input, "click", /*click_handler*/ ctx[33]),
+    					listen(i0, "click", /*clear*/ ctx[21])
     				];
 
     				mounted = true;
@@ -2020,16 +2022,16 @@ var app = (function () {
     		p(ctx, dirty) {
     			if (dirty[0] & /*label*/ 2) set_data(t0, /*label*/ ctx[1]);
 
-    			if (dirty[0] & /*labelTopPadding, boxWidth*/ 36864 && label_1_style_value !== (label_1_style_value = `${/*labelTopPadding*/ ctx[15]} max-width:${/*boxWidth*/ ctx[12]}px;`)) {
+    			if (dirty[0] & /*labelTopPadding, boxWidth*/ 147456 && label_1_style_value !== (label_1_style_value = `${/*labelTopPadding*/ ctx[17]} max-width:${/*boxWidth*/ ctx[14]}px;`)) {
     				attr(label_1, "style", label_1_style_value);
     			}
 
-    			if (dirty[0] & /*labelCls*/ 8192 && label_1_class_value !== (label_1_class_value = "" + (null_to_empty(`${/*labelCls*/ ctx[13]} truncate`) + " svelte-1cjqtag"))) {
+    			if (dirty[0] & /*labelCls*/ 32768 && label_1_class_value !== (label_1_class_value = "" + (null_to_empty(`${/*labelCls*/ ctx[15]} truncate`) + " svelte-1cjqtag"))) {
     				attr(label_1, "class", label_1_class_value);
     			}
 
-    			if (dirty[0] & /*type*/ 1024) {
-    				attr(input, "type", /*type*/ ctx[10]);
+    			if (dirty[0] & /*type*/ 4096) {
+    				attr(input, "type", /*type*/ ctx[12]);
     			}
 
     			if (dirty[0] & /*readonly*/ 256) {
@@ -2044,8 +2046,16 @@ var app = (function () {
     				input.disabled = /*disabled*/ ctx[6];
     			}
 
-    			if (dirty[0] & /*inputPadBottom*/ 16384) {
-    				attr(input, "style", /*inputPadBottom*/ ctx[14]);
+    			if (dirty[0] & /*min*/ 512) {
+    				attr(input, "min", /*min*/ ctx[9]);
+    			}
+
+    			if (dirty[0] & /*max*/ 1024) {
+    				attr(input, "max", /*max*/ ctx[10]);
+    			}
+
+    			if (dirty[0] & /*inputPadBottom*/ 65536) {
+    				attr(input, "style", /*inputPadBottom*/ ctx[16]);
     			}
 
     			if (dirty[0] & /*clearable, disabled*/ 96 && i0_class_value !== (i0_class_value = /*clearable*/ ctx[5] && !/*disabled*/ ctx[6]
@@ -2060,15 +2070,15 @@ var app = (function () {
 
     			if (dirty[0] & /*icon*/ 16) set_data(t5, /*icon*/ ctx[4]);
 
-    			if (dirty[0] & /*iconCls*/ 2048 && i1_class_value !== (i1_class_value = "" + (null_to_empty(/*iconCls*/ ctx[11]) + " svelte-1cjqtag"))) {
+    			if (dirty[0] & /*iconCls*/ 8192 && i1_class_value !== (i1_class_value = "" + (null_to_empty(/*iconCls*/ ctx[13]) + " svelte-1cjqtag"))) {
     				attr(i1, "class", i1_class_value);
     			}
 
-    			if (dirty[0] & /*iconCls, disabled*/ 2112) {
+    			if (dirty[0] & /*iconCls, disabled*/ 8256) {
     				toggle_class(i1, "opacity-50", /*disabled*/ ctx[6]);
     			}
 
-    			if (dirty[0] & /*hasFocus, borderColor, disabled*/ 580 && div2_class_value !== (div2_class_value = "" + (null_to_empty(/*hasFocus*/ ctx[9]
+    			if (dirty[0] & /*hasFocus, borderColor, disabled*/ 2116 && div2_class_value !== (div2_class_value = "" + (null_to_empty(/*hasFocus*/ ctx[11]
     			? `relative rounded-t border-b-2 bg-gray-300 ${/*borderColor*/ ctx[2]}`
     			: `relative rounded-t border-b border-gray-500${/*disabled*/ ctx[6]
 				? ""
@@ -2076,11 +2086,11 @@ var app = (function () {
     				attr(div2, "class", div2_class_value);
     			}
 
-    			if (dirty[0] & /*hasFocus, borderColor, disabled, disabled*/ 580) {
+    			if (dirty[0] & /*hasFocus, borderColor, disabled, disabled*/ 2116) {
     				toggle_class(div2, "opacity-50", /*disabled*/ ctx[6]);
     			}
 
-    			if (dirty[0] & /*hasFocus, borderColor, disabled, disabled*/ 580) {
+    			if (dirty[0] & /*hasFocus, borderColor, disabled, disabled*/ 2116) {
     				toggle_class(div2, "disabled", /*disabled*/ ctx[6]);
     			}
 
@@ -2126,11 +2136,13 @@ var app = (function () {
     	let { readonly = false } = $$props;
     	let { password = false } = $$props;
     	let { date = false } = $$props;
+    	let { min = null } = $$props;
+    	let { max = null } = $$props;
     	let hasFocus = false;
     	let iconCls = "";
     	let boxWidth;
     	const y = tweened(1, { duration: 50 });
-    	component_subscribe($$self, y, value => $$invalidate(26, $y = value));
+    	component_subscribe($$self, y, value => $$invalidate(28, $y = value));
     	let type = "text";
 
     	function handleInput(event) {
@@ -2151,7 +2163,7 @@ var app = (function () {
     	let inputPadBottom = "";
 
     	function setLabelColor(prefix) {
-    		$$invalidate(13, labelCls = `${prefix} ${labelColor}`);
+    		$$invalidate(15, labelCls = `${prefix} ${labelColor}`);
     	}
 
     	let valueEmpty = false;
@@ -2181,29 +2193,31 @@ var app = (function () {
     		bubble($$self, event);
     	}
 
-    	const focus_handler_1 = () => $$invalidate(9, hasFocus = true);
-    	const blur_handler_1 = () => $$invalidate(9, hasFocus = false);
+    	const focus_handler_1 = () => $$invalidate(11, hasFocus = true);
+    	const blur_handler_1 = () => $$invalidate(11, hasFocus = false);
 
     	function div3_elementresize_handler() {
     		boxWidth = this.clientWidth;
-    		$$invalidate(12, boxWidth);
+    		$$invalidate(14, boxWidth);
     	}
 
     	$$self.$$set = $$props => {
     		if ("label" in $$props) $$invalidate(1, label = $$props.label);
     		if ("value" in $$props) $$invalidate(0, value = $$props.value);
-    		if ("number" in $$props) $$invalidate(20, number = $$props.number);
+    		if ("number" in $$props) $$invalidate(22, number = $$props.number);
     		if ("borderColor" in $$props) $$invalidate(2, borderColor = $$props.borderColor);
-    		if ("labelColor" in $$props) $$invalidate(21, labelColor = $$props.labelColor);
+    		if ("labelColor" in $$props) $$invalidate(23, labelColor = $$props.labelColor);
     		if ("helperText" in $$props) $$invalidate(3, helperText = $$props.helperText);
-    		if ("helperTextColor" in $$props) $$invalidate(22, helperTextColor = $$props.helperTextColor);
+    		if ("helperTextColor" in $$props) $$invalidate(24, helperTextColor = $$props.helperTextColor);
     		if ("icon" in $$props) $$invalidate(4, icon = $$props.icon);
     		if ("clearable" in $$props) $$invalidate(5, clearable = $$props.clearable);
     		if ("disabled" in $$props) $$invalidate(6, disabled = $$props.disabled);
     		if ("hideDetails" in $$props) $$invalidate(7, hideDetails = $$props.hideDetails);
     		if ("readonly" in $$props) $$invalidate(8, readonly = $$props.readonly);
-    		if ("password" in $$props) $$invalidate(23, password = $$props.password);
-    		if ("date" in $$props) $$invalidate(24, date = $$props.date);
+    		if ("password" in $$props) $$invalidate(25, password = $$props.password);
+    		if ("date" in $$props) $$invalidate(26, date = $$props.date);
+    		if ("min" in $$props) $$invalidate(9, min = $$props.min);
+    		if ("max" in $$props) $$invalidate(10, max = $$props.max);
     	};
 
     	let labelTopPadding;
@@ -2211,47 +2225,47 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty[0] & /*icon*/ 16) {
-    			 $$invalidate(11, iconCls = icon
+    			 $$invalidate(13, iconCls = icon
     			? "material-icons md-18 pointer-events-none"
     			: "hidden");
     		}
 
-    		if ($$self.$$.dirty[0] & /*password, number, date*/ 26214400) {
+    		if ($$self.$$.dirty[0] & /*password, number, date*/ 104857600) {
     			 if (password) {
-    				$$invalidate(10, type = "password");
+    				$$invalidate(12, type = "password");
     			} else if (number) {
-    				$$invalidate(10, type = "number");
+    				$$invalidate(12, type = "number");
     			} else if (date) {
-    				$$invalidate(10, type = "date");
+    				$$invalidate(12, type = "date");
     			} else {
-    				$$invalidate(10, type = "text");
+    				$$invalidate(12, type = "text");
     			}
     		}
 
-    		if ($$self.$$.dirty[0] & /*$y*/ 67108864) {
-    			 $$invalidate(15, labelTopPadding = `transform:translateY(${$y}rem);`);
+    		if ($$self.$$.dirty[0] & /*$y*/ 268435456) {
+    			 $$invalidate(17, labelTopPadding = `transform:translateY(${$y}rem);`);
     		}
 
-    		if ($$self.$$.dirty[0] & /*helperTextColor*/ 4194304) {
-    			 $$invalidate(16, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
+    		if ($$self.$$.dirty[0] & /*helperTextColor*/ 16777216) {
+    			 $$invalidate(18, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
     		}
 
     		if ($$self.$$.dirty[0] & /*value*/ 1) {
-    			 $$invalidate(25, valueEmpty = value == null || value.toString().length === 0);
+    			 $$invalidate(27, valueEmpty = value == null || value.toString().length === 0);
     		}
 
-    		if ($$self.$$.dirty[0] & /*hasFocus, type, valueEmpty*/ 33555968) {
+    		if ($$self.$$.dirty[0] & /*hasFocus, type, valueEmpty*/ 134223872) {
     			 if (hasFocus) {
     				y.set(0.25);
     				setLabelColor("absolute left-0 px-2 text-sm pointer-events-none");
-    				$$invalidate(14, inputPadBottom = "padding-bottom:7px");
+    				$$invalidate(16, inputPadBottom = "padding-bottom:7px");
     			} else {
-    				$$invalidate(14, inputPadBottom = "padding-bottom:8px");
-    				$$invalidate(13, labelCls = "absolute left-0 px-2 text-sm pointer-events-none text-gray-600");
+    				$$invalidate(16, inputPadBottom = "padding-bottom:8px");
+    				$$invalidate(15, labelCls = "absolute left-0 px-2 text-sm pointer-events-none text-gray-600");
 
     				if (type !== "date" && valueEmpty) {
     					y.set(1);
-    					$$invalidate(13, labelCls = "absolute left-0 px-2 pointer-events-none text-gray-600");
+    					$$invalidate(15, labelCls = "absolute left-0 px-2 pointer-events-none text-gray-600");
     				} else {
     					y.set(0.25);
     				}
@@ -2269,6 +2283,8 @@ var app = (function () {
     		disabled,
     		hideDetails,
     		readonly,
+    		min,
+    		max,
     		hasFocus,
     		type,
     		iconCls,
@@ -2311,18 +2327,20 @@ var app = (function () {
     			{
     				label: 1,
     				value: 0,
-    				number: 20,
+    				number: 22,
     				borderColor: 2,
-    				labelColor: 21,
+    				labelColor: 23,
     				helperText: 3,
-    				helperTextColor: 22,
+    				helperTextColor: 24,
     				icon: 4,
     				clearable: 5,
     				disabled: 6,
     				hideDetails: 7,
     				readonly: 8,
-    				password: 23,
-    				date: 24
+    				password: 25,
+    				date: 26,
+    				min: 9,
+    				max: 10
     			},
     			[-1, -1]
     		);
@@ -2339,7 +2357,7 @@ var app = (function () {
     		c() {
     			div = element("div");
     			t = text(/*helperText*/ ctx[2]);
-    			attr(div, "class", /*helperTextCls*/ ctx[17]);
+    			attr(div, "class", /*helperTextCls*/ ctx[19]);
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -2348,8 +2366,8 @@ var app = (function () {
     		p(ctx, dirty) {
     			if (dirty[0] & /*helperText*/ 4) set_data(t, /*helperText*/ ctx[2]);
 
-    			if (dirty[0] & /*helperTextCls*/ 131072) {
-    				attr(div, "class", /*helperTextCls*/ ctx[17]);
+    			if (dirty[0] & /*helperTextCls*/ 524288) {
+    				attr(div, "class", /*helperTextCls*/ ctx[19]);
     			}
     		},
     		d(detaching) {
@@ -2408,14 +2426,16 @@ var app = (function () {
     			t7 = text(/*icon*/ ctx[3]);
     			t8 = space();
     			if (if_block) if_block.c();
-    			attr(legend, "style", /*legendStyle*/ ctx[15]);
-    			attr(label_1, "style", label_1_style_value = `${/*labelTranslateStyle*/ ctx[16]} max-width:${/*boxWidth*/ ctx[12] - 16}px;`);
-    			attr(label_1, "class", label_1_class_value = `${/*labelCls*/ ctx[14]}absolute left-0 mx-2 pointer-events-none truncate`);
-    			add_render_callback(() => /*label_1_elementresize_handler*/ ctx[33].call(label_1));
-    			attr(input, "type", /*type*/ ctx[9]);
+    			attr(legend, "style", /*legendStyle*/ ctx[17]);
+    			attr(label_1, "style", label_1_style_value = `${/*labelTranslateStyle*/ ctx[18]} max-width:${/*boxWidth*/ ctx[14] - 16}px;`);
+    			attr(label_1, "class", label_1_class_value = `${/*labelCls*/ ctx[16]}absolute left-0 mx-2 pointer-events-none truncate`);
+    			add_render_callback(() => /*label_1_elementresize_handler*/ ctx[35].call(label_1));
+    			attr(input, "type", /*type*/ ctx[11]);
     			input.readOnly = /*readonly*/ ctx[7];
     			input.value = /*value*/ ctx[0];
     			input.disabled = /*disabled*/ ctx[5];
+    			attr(input, "min", /*min*/ ctx[8]);
+    			attr(input, "max", /*max*/ ctx[9]);
     			set_style(input, "padding-bottom", "3px");
     			attr(input, "class", "h-8 appearance-none bg-transparent border-none w-full\r\n        text-gray-800 px-2 focus:outline-none");
 
@@ -2424,16 +2444,16 @@ var app = (function () {
     			: "");
 
     			toggle_class(i0, "hidden", !/*clearable*/ ctx[4] || /*disabled*/ ctx[5]);
-    			attr(i1, "class", /*iconCls*/ ctx[11]);
+    			attr(i1, "class", /*iconCls*/ ctx[13]);
     			toggle_class(i1, "opacity-50", /*disabled*/ ctx[5]);
     			attr(div0, "class", "float-right flex items-center mr-2 mb-1");
     			attr(div1, "class", "flex justify-between");
     			fieldset.disabled = /*disabled*/ ctx[5];
     			set_style(fieldset, "height", "59px");
-    			attr(fieldset, "class", fieldset_class_value = `${/*fieldsetCls*/ ctx[13]}relative rounded`);
+    			attr(fieldset, "class", fieldset_class_value = `${/*fieldsetCls*/ ctx[15]}relative rounded`);
     			toggle_class(fieldset, "opacity-50", /*disabled*/ ctx[5]);
     			attr(div2, "class", "flex flex-col");
-    			add_render_callback(() => /*div2_elementresize_handler*/ ctx[36].call(div2));
+    			add_render_callback(() => /*div2_elementresize_handler*/ ctx[38].call(div2));
     		},
     		m(target, anchor) {
     			insert(target, div2, anchor);
@@ -2443,7 +2463,7 @@ var app = (function () {
     			append(fieldset, t1);
     			append(fieldset, label_1);
     			append(label_1, t2);
-    			label_1_resize_listener = add_resize_listener(label_1, /*label_1_elementresize_handler*/ ctx[33].bind(label_1));
+    			label_1_resize_listener = add_resize_listener(label_1, /*label_1_elementresize_handler*/ ctx[35].bind(label_1));
     			append(fieldset, t3);
     			append(fieldset, div1);
     			append(div1, input);
@@ -2456,41 +2476,41 @@ var app = (function () {
     			append(i1, t7);
     			append(div2, t8);
     			if (if_block) if_block.m(div2, null);
-    			div2_resize_listener = add_resize_listener(div2, /*div2_elementresize_handler*/ ctx[36].bind(div2));
+    			div2_resize_listener = add_resize_listener(div2, /*div2_elementresize_handler*/ ctx[38].bind(div2));
 
     			if (!mounted) {
     				dispose = [
-    					listen(input, "input", /*handleInput*/ ctx[19]),
-    					listen(input, "focus", /*focus_handler_1*/ ctx[34]),
-    					listen(input, "blur", /*blur_handler_1*/ ctx[35]),
-    					listen(input, "focus", /*focus_handler*/ ctx[28]),
-    					listen(input, "blur", /*blur_handler*/ ctx[29]),
-    					listen(input, "keydown", /*keydown_handler*/ ctx[30]),
-    					listen(input, "keyup", /*keyup_handler*/ ctx[31]),
-    					listen(input, "click", /*click_handler*/ ctx[32]),
-    					listen(i0, "click", /*clear*/ ctx[20])
+    					listen(input, "input", /*handleInput*/ ctx[21]),
+    					listen(input, "focus", /*focus_handler_1*/ ctx[36]),
+    					listen(input, "blur", /*blur_handler_1*/ ctx[37]),
+    					listen(input, "focus", /*focus_handler*/ ctx[30]),
+    					listen(input, "blur", /*blur_handler*/ ctx[31]),
+    					listen(input, "keydown", /*keydown_handler*/ ctx[32]),
+    					listen(input, "keyup", /*keyup_handler*/ ctx[33]),
+    					listen(input, "click", /*click_handler*/ ctx[34]),
+    					listen(i0, "click", /*clear*/ ctx[22])
     				];
 
     				mounted = true;
     			}
     		},
     		p(ctx, dirty) {
-    			if (dirty[0] & /*legendStyle*/ 32768) {
-    				attr(legend, "style", /*legendStyle*/ ctx[15]);
+    			if (dirty[0] & /*legendStyle*/ 131072) {
+    				attr(legend, "style", /*legendStyle*/ ctx[17]);
     			}
 
     			if (dirty[0] & /*label*/ 2) set_data(t2, /*label*/ ctx[1]);
 
-    			if (dirty[0] & /*labelTranslateStyle, boxWidth*/ 69632 && label_1_style_value !== (label_1_style_value = `${/*labelTranslateStyle*/ ctx[16]} max-width:${/*boxWidth*/ ctx[12] - 16}px;`)) {
+    			if (dirty[0] & /*labelTranslateStyle, boxWidth*/ 278528 && label_1_style_value !== (label_1_style_value = `${/*labelTranslateStyle*/ ctx[18]} max-width:${/*boxWidth*/ ctx[14] - 16}px;`)) {
     				attr(label_1, "style", label_1_style_value);
     			}
 
-    			if (dirty[0] & /*labelCls*/ 16384 && label_1_class_value !== (label_1_class_value = `${/*labelCls*/ ctx[14]}absolute left-0 mx-2 pointer-events-none truncate`)) {
+    			if (dirty[0] & /*labelCls*/ 65536 && label_1_class_value !== (label_1_class_value = `${/*labelCls*/ ctx[16]}absolute left-0 mx-2 pointer-events-none truncate`)) {
     				attr(label_1, "class", label_1_class_value);
     			}
 
-    			if (dirty[0] & /*type*/ 512) {
-    				attr(input, "type", /*type*/ ctx[9]);
+    			if (dirty[0] & /*type*/ 2048) {
+    				attr(input, "type", /*type*/ ctx[11]);
     			}
 
     			if (dirty[0] & /*readonly*/ 128) {
@@ -2505,6 +2525,14 @@ var app = (function () {
     				input.disabled = /*disabled*/ ctx[5];
     			}
 
+    			if (dirty[0] & /*min*/ 256) {
+    				attr(input, "min", /*min*/ ctx[8]);
+    			}
+
+    			if (dirty[0] & /*max*/ 512) {
+    				attr(input, "max", /*max*/ ctx[9]);
+    			}
+
     			if (dirty[0] & /*clearable, disabled*/ 48 && i0_class_value !== (i0_class_value = /*clearable*/ ctx[4] && !/*disabled*/ ctx[5]
     			? "material-icons md-18 mr-2 cursor-pointer"
     			: "")) {
@@ -2517,11 +2545,11 @@ var app = (function () {
 
     			if (dirty[0] & /*icon*/ 8) set_data(t7, /*icon*/ ctx[3]);
 
-    			if (dirty[0] & /*iconCls*/ 2048) {
-    				attr(i1, "class", /*iconCls*/ ctx[11]);
+    			if (dirty[0] & /*iconCls*/ 8192) {
+    				attr(i1, "class", /*iconCls*/ ctx[13]);
     			}
 
-    			if (dirty[0] & /*iconCls, disabled*/ 2080) {
+    			if (dirty[0] & /*iconCls, disabled*/ 8224) {
     				toggle_class(i1, "opacity-50", /*disabled*/ ctx[5]);
     			}
 
@@ -2529,11 +2557,11 @@ var app = (function () {
     				fieldset.disabled = /*disabled*/ ctx[5];
     			}
 
-    			if (dirty[0] & /*fieldsetCls*/ 8192 && fieldset_class_value !== (fieldset_class_value = `${/*fieldsetCls*/ ctx[13]}relative rounded`)) {
+    			if (dirty[0] & /*fieldsetCls*/ 32768 && fieldset_class_value !== (fieldset_class_value = `${/*fieldsetCls*/ ctx[15]}relative rounded`)) {
     				attr(fieldset, "class", fieldset_class_value);
     			}
 
-    			if (dirty[0] & /*fieldsetCls, disabled*/ 8224) {
+    			if (dirty[0] & /*fieldsetCls, disabled*/ 32800) {
     				toggle_class(fieldset, "opacity-50", /*disabled*/ ctx[5]);
     			}
 
@@ -2580,11 +2608,13 @@ var app = (function () {
     	let { readonly = false } = $$props;
     	let { password = false } = $$props;
     	let { date = false } = $$props;
+    	let { min = null } = $$props;
+    	let { max = null } = $$props;
     	let hasFocus = false;
     	let iconCls = "";
     	let boxWidth;
     	const y = tweened(0.75, { duration: 50 });
-    	component_subscribe($$self, y, value => $$invalidate(27, $y = value));
+    	component_subscribe($$self, y, value => $$invalidate(29, $y = value));
     	let type = "text";
 
     	function handleInput(event) {
@@ -2607,21 +2637,21 @@ var app = (function () {
     	let labelWidth;
 
     	function setFocusState() {
-    		$$invalidate(14, labelCls = `text-sm ${labelColor} `);
+    		$$invalidate(16, labelCls = `text-sm ${labelColor} `);
     		y.set(-1.35);
-    		$$invalidate(13, fieldsetCls = `border-2 ${borderColor} `);
+    		$$invalidate(15, fieldsetCls = `border-2 ${borderColor} `);
     	}
 
     	function setFieldsetCls(cls) {
-    		$$invalidate(13, fieldsetCls = cls + " ");
+    		$$invalidate(15, fieldsetCls = cls + " ");
     	}
 
     	function setLabelCls(cls) {
-    		$$invalidate(14, labelCls = cls + " ");
+    		$$invalidate(16, labelCls = cls + " ");
     	}
 
     	function setLegendStyle(style) {
-    		$$invalidate(15, legendStyle = style);
+    		$$invalidate(17, legendStyle = style);
     	}
 
     	function clear() {
@@ -2651,65 +2681,67 @@ var app = (function () {
 
     	function label_1_elementresize_handler() {
     		labelWidth = this.clientWidth;
-    		$$invalidate(10, labelWidth);
+    		$$invalidate(12, labelWidth);
     	}
 
-    	const focus_handler_1 = () => $$invalidate(8, hasFocus = true);
-    	const blur_handler_1 = () => $$invalidate(8, hasFocus = false);
+    	const focus_handler_1 = () => $$invalidate(10, hasFocus = true);
+    	const blur_handler_1 = () => $$invalidate(10, hasFocus = false);
 
     	function div2_elementresize_handler() {
     		boxWidth = this.clientWidth;
-    		$$invalidate(12, boxWidth);
+    		$$invalidate(14, boxWidth);
     	}
 
     	$$self.$$set = $$props => {
     		if ("label" in $$props) $$invalidate(1, label = $$props.label);
     		if ("value" in $$props) $$invalidate(0, value = $$props.value);
-    		if ("number" in $$props) $$invalidate(21, number = $$props.number);
-    		if ("borderColor" in $$props) $$invalidate(22, borderColor = $$props.borderColor);
-    		if ("labelColor" in $$props) $$invalidate(23, labelColor = $$props.labelColor);
+    		if ("number" in $$props) $$invalidate(23, number = $$props.number);
+    		if ("borderColor" in $$props) $$invalidate(24, borderColor = $$props.borderColor);
+    		if ("labelColor" in $$props) $$invalidate(25, labelColor = $$props.labelColor);
     		if ("helperText" in $$props) $$invalidate(2, helperText = $$props.helperText);
-    		if ("helperTextColor" in $$props) $$invalidate(24, helperTextColor = $$props.helperTextColor);
+    		if ("helperTextColor" in $$props) $$invalidate(26, helperTextColor = $$props.helperTextColor);
     		if ("icon" in $$props) $$invalidate(3, icon = $$props.icon);
     		if ("clearable" in $$props) $$invalidate(4, clearable = $$props.clearable);
     		if ("disabled" in $$props) $$invalidate(5, disabled = $$props.disabled);
     		if ("hideDetails" in $$props) $$invalidate(6, hideDetails = $$props.hideDetails);
     		if ("readonly" in $$props) $$invalidate(7, readonly = $$props.readonly);
-    		if ("password" in $$props) $$invalidate(25, password = $$props.password);
-    		if ("date" in $$props) $$invalidate(26, date = $$props.date);
+    		if ("password" in $$props) $$invalidate(27, password = $$props.password);
+    		if ("date" in $$props) $$invalidate(28, date = $$props.date);
+    		if ("min" in $$props) $$invalidate(8, min = $$props.min);
+    		if ("max" in $$props) $$invalidate(9, max = $$props.max);
     	};
 
     	let labelTranslateStyle;
     	let helperTextCls;
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*password, number, date*/ 102760448) {
+    		if ($$self.$$.dirty[0] & /*password, number, date*/ 411041792) {
     			 if (password) {
-    				$$invalidate(9, type = "password");
+    				$$invalidate(11, type = "password");
     			} else if (number) {
-    				$$invalidate(9, type = "number");
+    				$$invalidate(11, type = "number");
     			} else if (date) {
-    				$$invalidate(9, type = "date");
+    				$$invalidate(11, type = "date");
     			} else {
-    				$$invalidate(9, type = "text");
+    				$$invalidate(11, type = "text");
     			}
     		}
 
-    		if ($$self.$$.dirty[0] & /*$y*/ 134217728) {
-    			 $$invalidate(16, labelTranslateStyle = `transform:translateY(${$y}rem);`);
+    		if ($$self.$$.dirty[0] & /*$y*/ 536870912) {
+    			 $$invalidate(18, labelTranslateStyle = `transform:translateY(${$y}rem);`);
     		}
 
-    		if ($$self.$$.dirty[0] & /*helperTextColor*/ 16777216) {
-    			 $$invalidate(17, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
+    		if ($$self.$$.dirty[0] & /*helperTextColor*/ 67108864) {
+    			 $$invalidate(19, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
     		}
 
     		if ($$self.$$.dirty[0] & /*icon*/ 8) {
-    			 $$invalidate(11, iconCls = icon
+    			 $$invalidate(13, iconCls = icon
     			? "material-icons md-18 pointer-events-none"
     			: "hidden");
     		}
 
-    		if ($$self.$$.dirty[0] & /*labelWidth, hasFocus, type, value*/ 1793) {
+    		if ($$self.$$.dirty[0] & /*labelWidth, hasFocus, type, value*/ 7169) {
     			 if (labelWidth) {
     				if (!hasFocus && type !== "date" && (value == null || value.toString().length === 0)) {
     					setLegendStyle("");
@@ -2719,7 +2751,7 @@ var app = (function () {
     			}
     		}
 
-    		if ($$self.$$.dirty[0] & /*hasFocus, disabled, type, value*/ 801) {
+    		if ($$self.$$.dirty[0] & /*hasFocus, disabled, type, value*/ 3105) {
     			 if (hasFocus) {
     				setFocusState();
     			} else {
@@ -2749,6 +2781,8 @@ var app = (function () {
     		disabled,
     		hideDetails,
     		readonly,
+    		min,
+    		max,
     		hasFocus,
     		type,
     		labelWidth,
@@ -2794,18 +2828,20 @@ var app = (function () {
     			{
     				label: 1,
     				value: 0,
-    				number: 21,
-    				borderColor: 22,
-    				labelColor: 23,
+    				number: 23,
+    				borderColor: 24,
+    				labelColor: 25,
     				helperText: 2,
-    				helperTextColor: 24,
+    				helperTextColor: 26,
     				icon: 3,
     				clearable: 4,
     				disabled: 5,
     				hideDetails: 6,
     				readonly: 7,
-    				password: 25,
-    				date: 26
+    				password: 27,
+    				date: 28,
+    				min: 8,
+    				max: 9
     			},
     			[-1, -1]
     		);
@@ -2820,7 +2856,7 @@ var app = (function () {
     	let current;
 
     	function inputoutlined_value_binding(value) {
-    		/*inputoutlined_value_binding*/ ctx[23].call(null, value);
+    		/*inputoutlined_value_binding*/ ctx[25].call(null, value);
     	}
 
     	let inputoutlined_props = {
@@ -2836,6 +2872,8 @@ var app = (function () {
     		readonly: /*readonly*/ ctx[12],
     		password: /*password*/ ctx[13],
     		date: /*date*/ ctx[14],
+    		min: /*min*/ ctx[15],
+    		max: /*max*/ ctx[16],
     		helperTextColor: /*helperTextColor*/ ctx[6]
     	};
 
@@ -2845,13 +2883,13 @@ var app = (function () {
 
     	inputoutlined = new InputOutlined({ props: inputoutlined_props });
     	binding_callbacks.push(() => bind(inputoutlined, "value", inputoutlined_value_binding));
-    	inputoutlined.$on("focus", /*focus_handler_1*/ ctx[24]);
-    	inputoutlined.$on("blur", /*blur_handler_1*/ ctx[25]);
-    	inputoutlined.$on("keydown", /*keydown_handler_1*/ ctx[26]);
-    	inputoutlined.$on("keyup", /*keyup_handler_1*/ ctx[27]);
-    	inputoutlined.$on("clear", /*clear_handler_1*/ ctx[28]);
-    	inputoutlined.$on("click", /*click_handler_1*/ ctx[29]);
-    	inputoutlined.$on("input", /*input_handler_1*/ ctx[30]);
+    	inputoutlined.$on("focus", /*focus_handler_1*/ ctx[26]);
+    	inputoutlined.$on("blur", /*blur_handler_1*/ ctx[27]);
+    	inputoutlined.$on("keydown", /*keydown_handler_1*/ ctx[28]);
+    	inputoutlined.$on("keyup", /*keyup_handler_1*/ ctx[29]);
+    	inputoutlined.$on("clear", /*clear_handler_1*/ ctx[30]);
+    	inputoutlined.$on("click", /*click_handler_1*/ ctx[31]);
+    	inputoutlined.$on("input", /*input_handler_1*/ ctx[32]);
 
     	return {
     		c() {
@@ -2863,21 +2901,23 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			const inputoutlined_changes = {};
-    			if (dirty & /*label*/ 2) inputoutlined_changes.label = /*label*/ ctx[1];
-    			if (dirty & /*borderColor*/ 8) inputoutlined_changes.borderColor = /*borderColor*/ ctx[3];
-    			if (dirty & /*labelColor*/ 16) inputoutlined_changes.labelColor = /*labelColor*/ ctx[4];
-    			if (dirty & /*helperText*/ 32) inputoutlined_changes.helperText = /*helperText*/ ctx[5];
-    			if (dirty & /*icon*/ 256) inputoutlined_changes.icon = /*icon*/ ctx[8];
-    			if (dirty & /*number*/ 4) inputoutlined_changes.number = /*number*/ ctx[2];
-    			if (dirty & /*clearable*/ 512) inputoutlined_changes.clearable = /*clearable*/ ctx[9];
-    			if (dirty & /*disabled*/ 1024) inputoutlined_changes.disabled = /*disabled*/ ctx[10];
-    			if (dirty & /*hideDetails*/ 2048) inputoutlined_changes.hideDetails = /*hideDetails*/ ctx[11];
-    			if (dirty & /*readonly*/ 4096) inputoutlined_changes.readonly = /*readonly*/ ctx[12];
-    			if (dirty & /*password*/ 8192) inputoutlined_changes.password = /*password*/ ctx[13];
-    			if (dirty & /*date*/ 16384) inputoutlined_changes.date = /*date*/ ctx[14];
-    			if (dirty & /*helperTextColor*/ 64) inputoutlined_changes.helperTextColor = /*helperTextColor*/ ctx[6];
+    			if (dirty[0] & /*label*/ 2) inputoutlined_changes.label = /*label*/ ctx[1];
+    			if (dirty[0] & /*borderColor*/ 8) inputoutlined_changes.borderColor = /*borderColor*/ ctx[3];
+    			if (dirty[0] & /*labelColor*/ 16) inputoutlined_changes.labelColor = /*labelColor*/ ctx[4];
+    			if (dirty[0] & /*helperText*/ 32) inputoutlined_changes.helperText = /*helperText*/ ctx[5];
+    			if (dirty[0] & /*icon*/ 256) inputoutlined_changes.icon = /*icon*/ ctx[8];
+    			if (dirty[0] & /*number*/ 4) inputoutlined_changes.number = /*number*/ ctx[2];
+    			if (dirty[0] & /*clearable*/ 512) inputoutlined_changes.clearable = /*clearable*/ ctx[9];
+    			if (dirty[0] & /*disabled*/ 1024) inputoutlined_changes.disabled = /*disabled*/ ctx[10];
+    			if (dirty[0] & /*hideDetails*/ 2048) inputoutlined_changes.hideDetails = /*hideDetails*/ ctx[11];
+    			if (dirty[0] & /*readonly*/ 4096) inputoutlined_changes.readonly = /*readonly*/ ctx[12];
+    			if (dirty[0] & /*password*/ 8192) inputoutlined_changes.password = /*password*/ ctx[13];
+    			if (dirty[0] & /*date*/ 16384) inputoutlined_changes.date = /*date*/ ctx[14];
+    			if (dirty[0] & /*min*/ 32768) inputoutlined_changes.min = /*min*/ ctx[15];
+    			if (dirty[0] & /*max*/ 65536) inputoutlined_changes.max = /*max*/ ctx[16];
+    			if (dirty[0] & /*helperTextColor*/ 64) inputoutlined_changes.helperTextColor = /*helperTextColor*/ ctx[6];
 
-    			if (!updating_value && dirty & /*value*/ 1) {
+    			if (!updating_value && dirty[0] & /*value*/ 1) {
     				updating_value = true;
     				inputoutlined_changes.value = /*value*/ ctx[0];
     				add_flush_callback(() => updating_value = false);
@@ -2900,14 +2940,14 @@ var app = (function () {
     	};
     }
 
-    // (22:0) {#if !outlined}
+    // (24:0) {#if !outlined}
     function create_if_block$4(ctx) {
     	let inputstd;
     	let updating_value;
     	let current;
 
     	function inputstd_value_binding(value) {
-    		/*inputstd_value_binding*/ ctx[15].call(null, value);
+    		/*inputstd_value_binding*/ ctx[17].call(null, value);
     	}
 
     	let inputstd_props = {
@@ -2923,6 +2963,8 @@ var app = (function () {
     		readonly: /*readonly*/ ctx[12],
     		password: /*password*/ ctx[13],
     		date: /*date*/ ctx[14],
+    		min: /*min*/ ctx[15],
+    		max: /*max*/ ctx[16],
     		helperTextColor: /*helperTextColor*/ ctx[6]
     	};
 
@@ -2932,13 +2974,13 @@ var app = (function () {
 
     	inputstd = new InputStd({ props: inputstd_props });
     	binding_callbacks.push(() => bind(inputstd, "value", inputstd_value_binding));
-    	inputstd.$on("focus", /*focus_handler*/ ctx[16]);
-    	inputstd.$on("blur", /*blur_handler*/ ctx[17]);
-    	inputstd.$on("keydown", /*keydown_handler*/ ctx[18]);
-    	inputstd.$on("keyup", /*keyup_handler*/ ctx[19]);
-    	inputstd.$on("clear", /*clear_handler*/ ctx[20]);
-    	inputstd.$on("click", /*click_handler*/ ctx[21]);
-    	inputstd.$on("input", /*input_handler*/ ctx[22]);
+    	inputstd.$on("focus", /*focus_handler*/ ctx[18]);
+    	inputstd.$on("blur", /*blur_handler*/ ctx[19]);
+    	inputstd.$on("keydown", /*keydown_handler*/ ctx[20]);
+    	inputstd.$on("keyup", /*keyup_handler*/ ctx[21]);
+    	inputstd.$on("clear", /*clear_handler*/ ctx[22]);
+    	inputstd.$on("click", /*click_handler*/ ctx[23]);
+    	inputstd.$on("input", /*input_handler*/ ctx[24]);
 
     	return {
     		c() {
@@ -2950,21 +2992,23 @@ var app = (function () {
     		},
     		p(ctx, dirty) {
     			const inputstd_changes = {};
-    			if (dirty & /*label*/ 2) inputstd_changes.label = /*label*/ ctx[1];
-    			if (dirty & /*borderColor*/ 8) inputstd_changes.borderColor = /*borderColor*/ ctx[3];
-    			if (dirty & /*labelColor*/ 16) inputstd_changes.labelColor = /*labelColor*/ ctx[4];
-    			if (dirty & /*helperText*/ 32) inputstd_changes.helperText = /*helperText*/ ctx[5];
-    			if (dirty & /*icon*/ 256) inputstd_changes.icon = /*icon*/ ctx[8];
-    			if (dirty & /*number*/ 4) inputstd_changes.number = /*number*/ ctx[2];
-    			if (dirty & /*clearable*/ 512) inputstd_changes.clearable = /*clearable*/ ctx[9];
-    			if (dirty & /*disabled*/ 1024) inputstd_changes.disabled = /*disabled*/ ctx[10];
-    			if (dirty & /*hideDetails*/ 2048) inputstd_changes.hideDetails = /*hideDetails*/ ctx[11];
-    			if (dirty & /*readonly*/ 4096) inputstd_changes.readonly = /*readonly*/ ctx[12];
-    			if (dirty & /*password*/ 8192) inputstd_changes.password = /*password*/ ctx[13];
-    			if (dirty & /*date*/ 16384) inputstd_changes.date = /*date*/ ctx[14];
-    			if (dirty & /*helperTextColor*/ 64) inputstd_changes.helperTextColor = /*helperTextColor*/ ctx[6];
+    			if (dirty[0] & /*label*/ 2) inputstd_changes.label = /*label*/ ctx[1];
+    			if (dirty[0] & /*borderColor*/ 8) inputstd_changes.borderColor = /*borderColor*/ ctx[3];
+    			if (dirty[0] & /*labelColor*/ 16) inputstd_changes.labelColor = /*labelColor*/ ctx[4];
+    			if (dirty[0] & /*helperText*/ 32) inputstd_changes.helperText = /*helperText*/ ctx[5];
+    			if (dirty[0] & /*icon*/ 256) inputstd_changes.icon = /*icon*/ ctx[8];
+    			if (dirty[0] & /*number*/ 4) inputstd_changes.number = /*number*/ ctx[2];
+    			if (dirty[0] & /*clearable*/ 512) inputstd_changes.clearable = /*clearable*/ ctx[9];
+    			if (dirty[0] & /*disabled*/ 1024) inputstd_changes.disabled = /*disabled*/ ctx[10];
+    			if (dirty[0] & /*hideDetails*/ 2048) inputstd_changes.hideDetails = /*hideDetails*/ ctx[11];
+    			if (dirty[0] & /*readonly*/ 4096) inputstd_changes.readonly = /*readonly*/ ctx[12];
+    			if (dirty[0] & /*password*/ 8192) inputstd_changes.password = /*password*/ ctx[13];
+    			if (dirty[0] & /*date*/ 16384) inputstd_changes.date = /*date*/ ctx[14];
+    			if (dirty[0] & /*min*/ 32768) inputstd_changes.min = /*min*/ ctx[15];
+    			if (dirty[0] & /*max*/ 65536) inputstd_changes.max = /*max*/ ctx[16];
+    			if (dirty[0] & /*helperTextColor*/ 64) inputstd_changes.helperTextColor = /*helperTextColor*/ ctx[6];
 
-    			if (!updating_value && dirty & /*value*/ 1) {
+    			if (!updating_value && dirty[0] & /*value*/ 1) {
     				updating_value = true;
     				inputstd_changes.value = /*value*/ ctx[0];
     				add_flush_callback(() => updating_value = false);
@@ -3013,7 +3057,7 @@ var app = (function () {
     			insert(target, if_block_anchor, anchor);
     			current = true;
     		},
-    		p(ctx, [dirty]) {
+    		p(ctx, dirty) {
     			let previous_block_index = current_block_type_index;
     			current_block_type_index = select_block_type(ctx);
 
@@ -3072,6 +3116,8 @@ var app = (function () {
     	let { readonly = false } = $$props;
     	let { password = false } = $$props;
     	let { date = false } = $$props;
+    	let { min = null } = $$props;
+    	let { max = null } = $$props;
 
     	function inputstd_value_binding(value$1) {
     		value = value$1;
@@ -3155,6 +3201,8 @@ var app = (function () {
     		if ("readonly" in $$props) $$invalidate(12, readonly = $$props.readonly);
     		if ("password" in $$props) $$invalidate(13, password = $$props.password);
     		if ("date" in $$props) $$invalidate(14, date = $$props.date);
+    		if ("min" in $$props) $$invalidate(15, min = $$props.min);
+    		if ("max" in $$props) $$invalidate(16, max = $$props.max);
     	};
 
     	return [
@@ -3173,6 +3221,8 @@ var app = (function () {
     		readonly,
     		password,
     		date,
+    		min,
+    		max,
     		inputstd_value_binding,
     		focus_handler,
     		blur_handler,
@@ -3196,23 +3246,33 @@ var app = (function () {
     	constructor(options) {
     		super();
 
-    		init(this, options, instance$5, create_fragment$7, safe_not_equal, {
-    			label: 1,
-    			value: 0,
-    			number: 2,
-    			borderColor: 3,
-    			labelColor: 4,
-    			helperText: 5,
-    			helperTextColor: 6,
-    			outlined: 7,
-    			icon: 8,
-    			clearable: 9,
-    			disabled: 10,
-    			hideDetails: 11,
-    			readonly: 12,
-    			password: 13,
-    			date: 14
-    		});
+    		init(
+    			this,
+    			options,
+    			instance$5,
+    			create_fragment$7,
+    			safe_not_equal,
+    			{
+    				label: 1,
+    				value: 0,
+    				number: 2,
+    				borderColor: 3,
+    				labelColor: 4,
+    				helperText: 5,
+    				helperTextColor: 6,
+    				outlined: 7,
+    				icon: 8,
+    				clearable: 9,
+    				disabled: 10,
+    				hideDetails: 11,
+    				readonly: 12,
+    				password: 13,
+    				date: 14,
+    				min: 15,
+    				max: 16
+    			},
+    			[-1, -1]
+    		);
     	}
     }
 
@@ -6371,87 +6431,95 @@ var app = (function () {
     function create_fragment$g(ctx) {
     	let h2;
     	let t1;
-    	let div80;
-    	let t133;
-    	let div101;
+    	let div90;
+    	let t149;
+    	let div113;
     	let h31;
-    	let div81;
-    	let t135;
+    	let div91;
+    	let t151;
     	let checkbox0;
     	let updating_checked;
-    	let t136;
-    	let div82;
+    	let t152;
+    	let div92;
     	let input0;
     	let updating_value;
-    	let t137;
-    	let div100;
-    	let div91;
-    	let div83;
+    	let t153;
+    	let div112;
+    	let div101;
+    	let div93;
     	let checkbox1;
     	let updating_checked_1;
-    	let t138;
-    	let div84;
+    	let t154;
+    	let div94;
     	let checkbox2;
     	let updating_checked_2;
-    	let t139;
-    	let div85;
+    	let t155;
+    	let div95;
     	let checkbox3;
     	let updating_checked_3;
-    	let t140;
-    	let div86;
+    	let t156;
+    	let div96;
     	let checkbox4;
     	let updating_checked_4;
-    	let t141;
-    	let div87;
+    	let t157;
+    	let div97;
     	let checkbox5;
     	let updating_checked_5;
-    	let t142;
-    	let div88;
+    	let t158;
+    	let div98;
     	let checkbox6;
     	let updating_checked_6;
-    	let t143;
-    	let div89;
+    	let t159;
+    	let div99;
     	let checkbox7;
     	let updating_checked_7;
-    	let t144;
-    	let div90;
+    	let t160;
+    	let div100;
     	let checkbox8;
     	let updating_checked_8;
-    	let t145;
-    	let div99;
-    	let div92;
+    	let t161;
+    	let div111;
+    	let div102;
     	let input1;
     	let updating_value_1;
-    	let t146;
-    	let div93;
+    	let t162;
+    	let div103;
     	let input2;
     	let updating_value_2;
-    	let t147;
-    	let div94;
+    	let t163;
+    	let div104;
     	let input3;
     	let updating_value_3;
-    	let t148;
-    	let div95;
+    	let t164;
+    	let div105;
     	let input4;
     	let updating_value_4;
-    	let t149;
-    	let div96;
+    	let t165;
+    	let div106;
     	let input5;
     	let updating_value_5;
-    	let t150;
-    	let div97;
+    	let t166;
+    	let div107;
     	let input6;
     	let updating_value_6;
-    	let t151;
-    	let div98;
+    	let t167;
+    	let div108;
     	let input7;
     	let updating_value_7;
-    	let t152;
+    	let t168;
+    	let div109;
+    	let input8;
+    	let updating_value_8;
+    	let t169;
+    	let div110;
+    	let input9;
+    	let updating_value_9;
+    	let t170;
     	let pre;
     	let current;
 
     	function checkbox0_checked_binding(value) {
-    		/*checkbox0_checked_binding*/ ctx[16].call(null, value);
+    		/*checkbox0_checked_binding*/ ctx[18].call(null, value);
     	}
 
     	let checkbox0_props = {
@@ -6459,15 +6527,15 @@ var app = (function () {
     		$$scope: { ctx }
     	};
 
-    	if (/*showCode*/ ctx[15] !== void 0) {
-    		checkbox0_props.checked = /*showCode*/ ctx[15];
+    	if (/*showCode*/ ctx[17] !== void 0) {
+    		checkbox0_props.checked = /*showCode*/ ctx[17];
     	}
 
     	checkbox0 = new Checkbox({ props: checkbox0_props });
     	binding_callbacks.push(() => bind(checkbox0, "checked", checkbox0_checked_binding));
 
     	function input0_value_binding(value) {
-    		/*input0_value_binding*/ ctx[17].call(null, value);
+    		/*input0_value_binding*/ ctx[19].call(null, value);
     	}
 
     	let input0_props = {
@@ -6475,6 +6543,8 @@ var app = (function () {
     		password: /*password*/ ctx[13],
     		date: /*date*/ ctx[14],
     		number: /*number*/ ctx[2],
+    		min: /*min*/ ctx[15],
+    		max: /*max*/ ctx[16],
     		borderColor: /*borderColor*/ ctx[3],
     		labelColor: /*labelColor*/ ctx[4],
     		helperText: /*helperText*/ ctx[5],
@@ -6495,7 +6565,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(input0, "value", input0_value_binding));
 
     	function checkbox1_checked_binding(value) {
-    		/*checkbox1_checked_binding*/ ctx[18].call(null, value);
+    		/*checkbox1_checked_binding*/ ctx[20].call(null, value);
     	}
 
     	let checkbox1_props = { label: "number" };
@@ -6508,7 +6578,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(checkbox1, "checked", checkbox1_checked_binding));
 
     	function checkbox2_checked_binding(value) {
-    		/*checkbox2_checked_binding*/ ctx[19].call(null, value);
+    		/*checkbox2_checked_binding*/ ctx[21].call(null, value);
     	}
 
     	let checkbox2_props = { label: "outlined" };
@@ -6521,7 +6591,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(checkbox2, "checked", checkbox2_checked_binding));
 
     	function checkbox3_checked_binding(value) {
-    		/*checkbox3_checked_binding*/ ctx[20].call(null, value);
+    		/*checkbox3_checked_binding*/ ctx[22].call(null, value);
     	}
 
     	let checkbox3_props = { label: "clearable" };
@@ -6534,7 +6604,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(checkbox3, "checked", checkbox3_checked_binding));
 
     	function checkbox4_checked_binding(value) {
-    		/*checkbox4_checked_binding*/ ctx[21].call(null, value);
+    		/*checkbox4_checked_binding*/ ctx[23].call(null, value);
     	}
 
     	let checkbox4_props = { label: "disabled" };
@@ -6547,7 +6617,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(checkbox4, "checked", checkbox4_checked_binding));
 
     	function checkbox5_checked_binding(value) {
-    		/*checkbox5_checked_binding*/ ctx[22].call(null, value);
+    		/*checkbox5_checked_binding*/ ctx[24].call(null, value);
     	}
 
     	let checkbox5_props = { label: "hideDetails" };
@@ -6560,7 +6630,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(checkbox5, "checked", checkbox5_checked_binding));
 
     	function checkbox6_checked_binding(value) {
-    		/*checkbox6_checked_binding*/ ctx[23].call(null, value);
+    		/*checkbox6_checked_binding*/ ctx[25].call(null, value);
     	}
 
     	let checkbox6_props = { label: "readonly" };
@@ -6573,7 +6643,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(checkbox6, "checked", checkbox6_checked_binding));
 
     	function checkbox7_checked_binding(value) {
-    		/*checkbox7_checked_binding*/ ctx[24].call(null, value);
+    		/*checkbox7_checked_binding*/ ctx[26].call(null, value);
     	}
 
     	let checkbox7_props = { label: "password" };
@@ -6586,7 +6656,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(checkbox7, "checked", checkbox7_checked_binding));
 
     	function checkbox8_checked_binding(value) {
-    		/*checkbox8_checked_binding*/ ctx[25].call(null, value);
+    		/*checkbox8_checked_binding*/ ctx[27].call(null, value);
     	}
 
     	let checkbox8_props = { label: "date" };
@@ -6599,7 +6669,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(checkbox8, "checked", checkbox8_checked_binding));
 
     	function input1_value_binding(value) {
-    		/*input1_value_binding*/ ctx[26].call(null, value);
+    		/*input1_value_binding*/ ctx[28].call(null, value);
     	}
 
     	let input1_props = {
@@ -6616,7 +6686,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(input1, "value", input1_value_binding));
 
     	function input2_value_binding(value) {
-    		/*input2_value_binding*/ ctx[27].call(null, value);
+    		/*input2_value_binding*/ ctx[29].call(null, value);
     	}
 
     	let input2_props = {
@@ -6633,7 +6703,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(input2, "value", input2_value_binding));
 
     	function input3_value_binding(value) {
-    		/*input3_value_binding*/ ctx[28].call(null, value);
+    		/*input3_value_binding*/ ctx[30].call(null, value);
     	}
 
     	let input3_props = {
@@ -6650,7 +6720,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(input3, "value", input3_value_binding));
 
     	function input4_value_binding(value) {
-    		/*input4_value_binding*/ ctx[29].call(null, value);
+    		/*input4_value_binding*/ ctx[31].call(null, value);
     	}
 
     	let input4_props = {
@@ -6667,7 +6737,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(input4, "value", input4_value_binding));
 
     	function input5_value_binding(value) {
-    		/*input5_value_binding*/ ctx[30].call(null, value);
+    		/*input5_value_binding*/ ctx[32].call(null, value);
     	}
 
     	let input5_props = {
@@ -6684,7 +6754,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(input5, "value", input5_value_binding));
 
     	function input6_value_binding(value) {
-    		/*input6_value_binding*/ ctx[31].call(null, value);
+    		/*input6_value_binding*/ ctx[33].call(null, value);
     	}
 
     	let input6_props = {
@@ -6701,7 +6771,7 @@ var app = (function () {
     	binding_callbacks.push(() => bind(input6, "value", input6_value_binding));
 
     	function input7_value_binding(value) {
-    		/*input7_value_binding*/ ctx[32].call(null, value);
+    		/*input7_value_binding*/ ctx[34].call(null, value);
     	}
 
     	let input7_props = {
@@ -6717,14 +6787,48 @@ var app = (function () {
     	input7 = new Input({ props: input7_props });
     	binding_callbacks.push(() => bind(input7, "value", input7_value_binding));
 
+    	function input8_value_binding(value) {
+    		/*input8_value_binding*/ ctx[35].call(null, value);
+    	}
+
+    	let input8_props = {
+    		hideDetails: true,
+    		outlined: true,
+    		label: "min"
+    	};
+
+    	if (/*min*/ ctx[15] !== void 0) {
+    		input8_props.value = /*min*/ ctx[15];
+    	}
+
+    	input8 = new Input({ props: input8_props });
+    	binding_callbacks.push(() => bind(input8, "value", input8_value_binding));
+
+    	function input9_value_binding(value) {
+    		/*input9_value_binding*/ ctx[36].call(null, value);
+    	}
+
+    	let input9_props = {
+    		hideDetails: true,
+    		outlined: true,
+    		label: "max"
+    	};
+
+    	if (/*max*/ ctx[16] !== void 0) {
+    		input9_props.value = /*max*/ ctx[16];
+    	}
+
+    	input9 = new Input({ props: input9_props });
+    	binding_callbacks.push(() => bind(input9, "value", input9_value_binding));
+
     	return {
     		c() {
     			h2 = element("h2");
     			h2.textContent = "Input";
     			t1 = space();
-    			div80 = element("div");
+    			div90 = element("div");
 
-    			div80.innerHTML = `<h3 class="text-lg font-bold ml-3 mt-5 mb-3">Properties</h3> 
+    			div90.innerHTML = `<h3 class="text-lg font-bold ml-3 mt-5 mb-3">Properties</h3> 
   <div class="table-row font-bold"><div class="table-cell py-3 px-3 border-b border-gray-400">Prop</div> 
     <div class="table-cell py-3 px-3 border-b border-gray-400">Description</div> 
     <div class="table-cell py-3 px-3 border-b border-gray-400">Type</div> 
@@ -6741,6 +6845,14 @@ var app = (function () {
     <div class="table-cell py-3 px-3 border-b border-gray-400">Specifies whether it&#39;s a number type input box.</div> 
     <div class="table-cell py-3 px-3 border-b border-gray-400">boolean</div> 
     <div class="table-cell py-3 px-3 border-b border-gray-400">false</div></div> 
+  <div class="table-row"><div class="table-cell py-3 px-3 border-b border-gray-400">min</div> 
+    <div class="table-cell py-3 px-3 border-b border-gray-400">Specifies the minimum value</div> 
+    <div class="table-cell py-3 px-3 border-b border-gray-400">string</div> 
+    <div class="table-cell py-3 px-3 border-b border-gray-400">null</div></div> 
+  <div class="table-row"><div class="table-cell py-3 px-3 border-b border-gray-400">max</div> 
+    <div class="table-cell py-3 px-3 border-b border-gray-400">Specifies the maximum value</div> 
+    <div class="table-cell py-3 px-3 border-b border-gray-400">string</div> 
+    <div class="table-cell py-3 px-3 border-b border-gray-400">null</div></div> 
   <div class="table-row"><div class="table-cell py-3 px-3 border-b border-gray-400">borderColor</div> 
     <div class="table-cell py-3 px-3 border-b border-gray-400">The border color of the input box. Accepts valid Tailwindcss border color
       class</div> 
@@ -6793,65 +6905,71 @@ var app = (function () {
     <div class="table-cell py-3 px-3 border-b border-gray-400">boolean</div> 
     <div class="table-cell py-3 px-3 border-b border-gray-400">false</div></div>`;
 
-    			t133 = space();
-    			div101 = element("div");
-    			h31 = element("h3");
-    			div81 = element("div");
-    			div81.textContent = "Demo";
-    			t135 = space();
-    			create_component(checkbox0.$$.fragment);
-    			t136 = space();
-    			div82 = element("div");
-    			create_component(input0.$$.fragment);
-    			t137 = space();
-    			div100 = element("div");
-    			div91 = element("div");
-    			div83 = element("div");
-    			create_component(checkbox1.$$.fragment);
-    			t138 = space();
-    			div84 = element("div");
-    			create_component(checkbox2.$$.fragment);
-    			t139 = space();
-    			div85 = element("div");
-    			create_component(checkbox3.$$.fragment);
-    			t140 = space();
-    			div86 = element("div");
-    			create_component(checkbox4.$$.fragment);
-    			t141 = space();
-    			div87 = element("div");
-    			create_component(checkbox5.$$.fragment);
-    			t142 = space();
-    			div88 = element("div");
-    			create_component(checkbox6.$$.fragment);
-    			t143 = space();
-    			div89 = element("div");
-    			create_component(checkbox7.$$.fragment);
-    			t144 = space();
-    			div90 = element("div");
-    			create_component(checkbox8.$$.fragment);
-    			t145 = space();
-    			div99 = element("div");
-    			div92 = element("div");
-    			create_component(input1.$$.fragment);
-    			t146 = space();
-    			div93 = element("div");
-    			create_component(input2.$$.fragment);
-    			t147 = space();
-    			div94 = element("div");
-    			create_component(input3.$$.fragment);
-    			t148 = space();
-    			div95 = element("div");
-    			create_component(input4.$$.fragment);
     			t149 = space();
-    			div96 = element("div");
-    			create_component(input5.$$.fragment);
-    			t150 = space();
-    			div97 = element("div");
-    			create_component(input6.$$.fragment);
+    			div113 = element("div");
+    			h31 = element("h3");
+    			div91 = element("div");
+    			div91.textContent = "Demo";
     			t151 = space();
-    			div98 = element("div");
-    			create_component(input7.$$.fragment);
+    			create_component(checkbox0.$$.fragment);
     			t152 = space();
+    			div92 = element("div");
+    			create_component(input0.$$.fragment);
+    			t153 = space();
+    			div112 = element("div");
+    			div101 = element("div");
+    			div93 = element("div");
+    			create_component(checkbox1.$$.fragment);
+    			t154 = space();
+    			div94 = element("div");
+    			create_component(checkbox2.$$.fragment);
+    			t155 = space();
+    			div95 = element("div");
+    			create_component(checkbox3.$$.fragment);
+    			t156 = space();
+    			div96 = element("div");
+    			create_component(checkbox4.$$.fragment);
+    			t157 = space();
+    			div97 = element("div");
+    			create_component(checkbox5.$$.fragment);
+    			t158 = space();
+    			div98 = element("div");
+    			create_component(checkbox6.$$.fragment);
+    			t159 = space();
+    			div99 = element("div");
+    			create_component(checkbox7.$$.fragment);
+    			t160 = space();
+    			div100 = element("div");
+    			create_component(checkbox8.$$.fragment);
+    			t161 = space();
+    			div111 = element("div");
+    			div102 = element("div");
+    			create_component(input1.$$.fragment);
+    			t162 = space();
+    			div103 = element("div");
+    			create_component(input2.$$.fragment);
+    			t163 = space();
+    			div104 = element("div");
+    			create_component(input3.$$.fragment);
+    			t164 = space();
+    			div105 = element("div");
+    			create_component(input4.$$.fragment);
+    			t165 = space();
+    			div106 = element("div");
+    			create_component(input5.$$.fragment);
+    			t166 = space();
+    			div107 = element("div");
+    			create_component(input6.$$.fragment);
+    			t167 = space();
+    			div108 = element("div");
+    			create_component(input7.$$.fragment);
+    			t168 = space();
+    			div109 = element("div");
+    			create_component(input8.$$.fragment);
+    			t169 = space();
+    			div110 = element("div");
+    			create_component(input9.$$.fragment);
+    			t170 = space();
     			pre = element("pre");
 
     			pre.textContent = `${`<Input
@@ -6870,107 +6988,115 @@ var app = (function () {
     {readonly} />`}`;
 
     			attr(h2, "class", "text-xl ml-4 font-semibold my-6");
-    			attr(div80, "class", "bg-gray-200 rounded my-4 px-4 table w-full");
-    			attr(div81, "class", "text-lg font-bold");
+    			attr(div90, "class", "bg-gray-200 rounded my-4 px-4 table w-full");
+    			attr(div91, "class", "text-lg font-bold");
     			attr(h31, "class", "mx-2 mb-2 flex justify-between");
-    			attr(div82, "class", "my-2");
-    			attr(div83, "class", "px-4");
-    			attr(div84, "class", "px-4");
-    			attr(div85, "class", "px-4");
-    			attr(div86, "class", "px-4");
-    			attr(div87, "class", "px-4");
-    			attr(div88, "class", "px-4");
-    			attr(div89, "class", "px-4");
-    			attr(div90, "class", "px-4");
-    			attr(div91, "class", "w-full flex flex-row flex-wrap");
-    			attr(div92, "class", "px-4 pb-2");
-    			attr(div93, "class", "px-4 pb-2");
-    			attr(div94, "class", "px-4 pb-2");
-    			attr(div95, "class", "px-4 pb-2");
-    			attr(div96, "class", "px-4 pb-2");
-    			attr(div97, "class", "px-4 pb-2");
-    			attr(div98, "class", "px-4 pb-2");
-    			attr(div99, "class", "w-full flex flex-row flex-wrap");
-    			attr(div100, "class", "border border-gray-500 rounded px-3 py-4 w-full");
-    			attr(div101, "class", "bg-gray-200 rounded p-4 w-full");
+    			attr(div92, "class", "my-2");
+    			attr(div93, "class", "px-4");
+    			attr(div94, "class", "px-4");
+    			attr(div95, "class", "px-4");
+    			attr(div96, "class", "px-4");
+    			attr(div97, "class", "px-4");
+    			attr(div98, "class", "px-4");
+    			attr(div99, "class", "px-4");
+    			attr(div100, "class", "px-4");
+    			attr(div101, "class", "w-full flex flex-row flex-wrap");
+    			attr(div102, "class", "px-4 pb-2");
+    			attr(div103, "class", "px-4 pb-2");
+    			attr(div104, "class", "px-4 pb-2");
+    			attr(div105, "class", "px-4 pb-2");
+    			attr(div106, "class", "px-4 pb-2");
+    			attr(div107, "class", "px-4 pb-2");
+    			attr(div108, "class", "px-4 pb-2");
+    			attr(div109, "class", "px-4 pb-2");
+    			attr(div110, "class", "px-4 pb-2");
+    			attr(div111, "class", "w-full flex flex-row flex-wrap");
+    			attr(div112, "class", "border border-gray-500 rounded px-3 py-4 w-full");
+    			attr(div113, "class", "bg-gray-200 rounded p-4 w-full");
     			attr(pre, "class", "my-2 bg-gray-200 rounded p-5 font-light");
-    			toggle_class(pre, "hidden", !/*showCode*/ ctx[15]);
+    			toggle_class(pre, "hidden", !/*showCode*/ ctx[17]);
     		},
     		m(target, anchor) {
     			insert(target, h2, anchor);
     			insert(target, t1, anchor);
-    			insert(target, div80, anchor);
-    			insert(target, t133, anchor);
-    			insert(target, div101, anchor);
-    			append(div101, h31);
-    			append(h31, div81);
-    			append(h31, t135);
+    			insert(target, div90, anchor);
+    			insert(target, t149, anchor);
+    			insert(target, div113, anchor);
+    			append(div113, h31);
+    			append(h31, div91);
+    			append(h31, t151);
     			mount_component(checkbox0, h31, null);
-    			append(div101, t136);
-    			append(div101, div82);
-    			mount_component(input0, div82, null);
-    			append(div101, t137);
+    			append(div113, t152);
+    			append(div113, div92);
+    			mount_component(input0, div92, null);
+    			append(div113, t153);
+    			append(div113, div112);
+    			append(div112, div101);
+    			append(div101, div93);
+    			mount_component(checkbox1, div93, null);
+    			append(div101, t154);
+    			append(div101, div94);
+    			mount_component(checkbox2, div94, null);
+    			append(div101, t155);
+    			append(div101, div95);
+    			mount_component(checkbox3, div95, null);
+    			append(div101, t156);
+    			append(div101, div96);
+    			mount_component(checkbox4, div96, null);
+    			append(div101, t157);
+    			append(div101, div97);
+    			mount_component(checkbox5, div97, null);
+    			append(div101, t158);
+    			append(div101, div98);
+    			mount_component(checkbox6, div98, null);
+    			append(div101, t159);
+    			append(div101, div99);
+    			mount_component(checkbox7, div99, null);
+    			append(div101, t160);
     			append(div101, div100);
-    			append(div100, div91);
-    			append(div91, div83);
-    			mount_component(checkbox1, div83, null);
-    			append(div91, t138);
-    			append(div91, div84);
-    			mount_component(checkbox2, div84, null);
-    			append(div91, t139);
-    			append(div91, div85);
-    			mount_component(checkbox3, div85, null);
-    			append(div91, t140);
-    			append(div91, div86);
-    			mount_component(checkbox4, div86, null);
-    			append(div91, t141);
-    			append(div91, div87);
-    			mount_component(checkbox5, div87, null);
-    			append(div91, t142);
-    			append(div91, div88);
-    			mount_component(checkbox6, div88, null);
-    			append(div91, t143);
-    			append(div91, div89);
-    			mount_component(checkbox7, div89, null);
-    			append(div91, t144);
-    			append(div91, div90);
-    			mount_component(checkbox8, div90, null);
-    			append(div100, t145);
-    			append(div100, div99);
-    			append(div99, div92);
-    			mount_component(input1, div92, null);
-    			append(div99, t146);
-    			append(div99, div93);
-    			mount_component(input2, div93, null);
-    			append(div99, t147);
-    			append(div99, div94);
-    			mount_component(input3, div94, null);
-    			append(div99, t148);
-    			append(div99, div95);
-    			mount_component(input4, div95, null);
-    			append(div99, t149);
-    			append(div99, div96);
-    			mount_component(input5, div96, null);
-    			append(div99, t150);
-    			append(div99, div97);
-    			mount_component(input6, div97, null);
-    			append(div99, t151);
-    			append(div99, div98);
-    			mount_component(input7, div98, null);
-    			insert(target, t152, anchor);
+    			mount_component(checkbox8, div100, null);
+    			append(div112, t161);
+    			append(div112, div111);
+    			append(div111, div102);
+    			mount_component(input1, div102, null);
+    			append(div111, t162);
+    			append(div111, div103);
+    			mount_component(input2, div103, null);
+    			append(div111, t163);
+    			append(div111, div104);
+    			mount_component(input3, div104, null);
+    			append(div111, t164);
+    			append(div111, div105);
+    			mount_component(input4, div105, null);
+    			append(div111, t165);
+    			append(div111, div106);
+    			mount_component(input5, div106, null);
+    			append(div111, t166);
+    			append(div111, div107);
+    			mount_component(input6, div107, null);
+    			append(div111, t167);
+    			append(div111, div108);
+    			mount_component(input7, div108, null);
+    			append(div111, t168);
+    			append(div111, div109);
+    			mount_component(input8, div109, null);
+    			append(div111, t169);
+    			append(div111, div110);
+    			mount_component(input9, div110, null);
+    			insert(target, t170, anchor);
     			insert(target, pre, anchor);
     			current = true;
     		},
     		p(ctx, dirty) {
     			const checkbox0_changes = {};
 
-    			if (dirty[1] & /*$$scope*/ 4) {
+    			if (dirty[1] & /*$$scope*/ 64) {
     				checkbox0_changes.$$scope = { dirty, ctx };
     			}
 
-    			if (!updating_checked && dirty[0] & /*showCode*/ 32768) {
+    			if (!updating_checked && dirty[0] & /*showCode*/ 131072) {
     				updating_checked = true;
-    				checkbox0_changes.checked = /*showCode*/ ctx[15];
+    				checkbox0_changes.checked = /*showCode*/ ctx[17];
     				add_flush_callback(() => updating_checked = false);
     			}
 
@@ -6980,6 +7106,8 @@ var app = (function () {
     			if (dirty[0] & /*password*/ 8192) input0_changes.password = /*password*/ ctx[13];
     			if (dirty[0] & /*date*/ 16384) input0_changes.date = /*date*/ ctx[14];
     			if (dirty[0] & /*number*/ 4) input0_changes.number = /*number*/ ctx[2];
+    			if (dirty[0] & /*min*/ 32768) input0_changes.min = /*min*/ ctx[15];
+    			if (dirty[0] & /*max*/ 65536) input0_changes.max = /*max*/ ctx[16];
     			if (dirty[0] & /*borderColor*/ 8) input0_changes.borderColor = /*borderColor*/ ctx[3];
     			if (dirty[0] & /*labelColor*/ 16) input0_changes.labelColor = /*labelColor*/ ctx[4];
     			if (dirty[0] & /*helperText*/ 32) input0_changes.helperText = /*helperText*/ ctx[5];
@@ -7133,9 +7261,27 @@ var app = (function () {
     			}
 
     			input7.$set(input7_changes);
+    			const input8_changes = {};
 
-    			if (dirty[0] & /*showCode*/ 32768) {
-    				toggle_class(pre, "hidden", !/*showCode*/ ctx[15]);
+    			if (!updating_value_8 && dirty[0] & /*min*/ 32768) {
+    				updating_value_8 = true;
+    				input8_changes.value = /*min*/ ctx[15];
+    				add_flush_callback(() => updating_value_8 = false);
+    			}
+
+    			input8.$set(input8_changes);
+    			const input9_changes = {};
+
+    			if (!updating_value_9 && dirty[0] & /*max*/ 65536) {
+    				updating_value_9 = true;
+    				input9_changes.value = /*max*/ ctx[16];
+    				add_flush_callback(() => updating_value_9 = false);
+    			}
+
+    			input9.$set(input9_changes);
+
+    			if (dirty[0] & /*showCode*/ 131072) {
+    				toggle_class(pre, "hidden", !/*showCode*/ ctx[17]);
     			}
     		},
     		i(local) {
@@ -7157,6 +7303,8 @@ var app = (function () {
     			transition_in(input5.$$.fragment, local);
     			transition_in(input6.$$.fragment, local);
     			transition_in(input7.$$.fragment, local);
+    			transition_in(input8.$$.fragment, local);
+    			transition_in(input9.$$.fragment, local);
     			current = true;
     		},
     		o(local) {
@@ -7177,14 +7325,16 @@ var app = (function () {
     			transition_out(input5.$$.fragment, local);
     			transition_out(input6.$$.fragment, local);
     			transition_out(input7.$$.fragment, local);
+    			transition_out(input8.$$.fragment, local);
+    			transition_out(input9.$$.fragment, local);
     			current = false;
     		},
     		d(detaching) {
     			if (detaching) detach(h2);
     			if (detaching) detach(t1);
-    			if (detaching) detach(div80);
-    			if (detaching) detach(t133);
-    			if (detaching) detach(div101);
+    			if (detaching) detach(div90);
+    			if (detaching) detach(t149);
+    			if (detaching) detach(div113);
     			destroy_component(checkbox0);
     			destroy_component(input0);
     			destroy_component(checkbox1);
@@ -7202,7 +7352,9 @@ var app = (function () {
     			destroy_component(input5);
     			destroy_component(input6);
     			destroy_component(input7);
-    			if (detaching) detach(t152);
+    			destroy_component(input8);
+    			destroy_component(input9);
+    			if (detaching) detach(t170);
     			if (detaching) detach(pre);
     		}
     	};
@@ -7224,11 +7376,13 @@ var app = (function () {
     	let readonly = false;
     	let password = false;
     	let date = false;
+    	let min = null;
+    	let max = null;
     	let showCode = false;
 
     	function checkbox0_checked_binding(value) {
     		showCode = value;
-    		$$invalidate(15, showCode);
+    		$$invalidate(17, showCode);
     	}
 
     	function input0_value_binding(value$1) {
@@ -7311,6 +7465,16 @@ var app = (function () {
     		$$invalidate(6, helperTextColor);
     	}
 
+    	function input8_value_binding(value) {
+    		min = value;
+    		$$invalidate(15, min);
+    	}
+
+    	function input9_value_binding(value) {
+    		max = value;
+    		$$invalidate(16, max);
+    	}
+
     	return [
     		label,
     		value,
@@ -7327,6 +7491,8 @@ var app = (function () {
     		readonly,
     		password,
     		date,
+    		min,
+    		max,
     		showCode,
     		checkbox0_checked_binding,
     		input0_value_binding,
@@ -7344,7 +7510,9 @@ var app = (function () {
     		input4_value_binding,
     		input5_value_binding,
     		input6_value_binding,
-    		input7_value_binding
+    		input7_value_binding,
+    		input8_value_binding,
+    		input9_value_binding
     	];
     }
 
