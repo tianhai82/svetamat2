@@ -1,5 +1,4 @@
 <script>
-  import Button from "../widgets/Button.svelte";
   import Checkbox from "../widgets/Checkbox.svelte";
   import Input from "../widgets/Input.svelte";
 

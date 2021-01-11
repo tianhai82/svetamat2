@@ -309,23 +309,18 @@ let marginX = 'mr-3'
     return (item.countryCode + "|" + item.countryName);
     }
 
-    <Autocomplete
-        {label}
+<div class="my-2">
+    <RadioGroup
         {items}
-        {caseSensitive}
         bind:value
-        {minCharactersToSearch}
-        {noResultsText}
-        {maxLen}
-        {borderColor}
+        {color}
         {labelColor}
-        {helperText}
-        {helperTextColor}
-        {outlined}
-        {clearable}
         {disabled}
-        {hideDetails}
         {labelFieldName}
-        {keywordsFieldName}
-        {keywordsFunction} />`}
+        {keywordFieldName}
+        {row}
+        {column}
+        {marginY}
+        {marginX} />
+</div>`}
 </pre>

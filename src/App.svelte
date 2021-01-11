@@ -16,6 +16,7 @@
   import CascaderGuide from "./components/CascaderGuide.svelte";
   import ToggleGuide from "./components/ToggleGuide.svelte";
   import RadioGroupGuide from "./components/RadioGroupGuide.svelte";
+  import RadioGuide from "./components/RadioGuide.svelte";
 
   const items = [
     { text: "Installation", component: Installation },
@@ -29,6 +30,7 @@
     { text: "File Input", component: FileInputGuide },
     { text: "Checkbox", component: CheckboxGuide },
     { text: "Radio Group", component: RadioGroupGuide },
+    { text: "Radio", component: RadioGuide },
     { text: "Toggle", component: ToggleGuide },
     { text: "Slider", component: SliderGuide },
     { text: "Auto Complete", component: AutocompleteGuide },

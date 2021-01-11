@@ -17,7 +17,7 @@ export let marginX = 'mr-6'
 export let labelFieldName = undefined;
 export let keywordFieldName = labelFieldName;
 
-function handleChange(e, item) {
+function handleChange(item) {
     value = item;
     dispatch('change', item);
 }
@@ -35,8 +35,8 @@ function isIdentical(a, b) {
     {#each items as item}
     <label class="{marginX} {marginY} flex items-center" class:cursor-not-allowed={disabled}
         class:cursor-pointer={!disabled} {disabled}>
-        <input class="hidden" type="radio" name="group" {disabled} on:change={(e)=>handleChange(e,item)}
-        on:input={(e)=>handleChange(e,item)}>
+        <input class="hidden" type="radio" name="group" {disabled} on:change={()=>handleChange(item)}
+        on:input={()=>handleChange(item)}>
         <div
             class="select-none rounded-full hover:bg-gray-300 w-8 h-8 flex items-center justify-center">
             <span class="{color} material-icons">
