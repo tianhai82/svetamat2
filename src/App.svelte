@@ -1,6 +1,5 @@
 <script>
   import Tailwindcss from "./Tailwindcss.svelte";
-  import NavigationDrawer from "./widgets/NavigationDrawer.svelte";
   import Github from "./svg/Github.svelte";
   import Installation from "./components/Installation.svelte";
   import ButtonGuide from "./components/ButtonGuide.svelte";
@@ -16,6 +15,7 @@
   import AutocompleteGuide from "./components/AutocompleteGuide.svelte";
   import CascaderGuide from "./components/CascaderGuide.svelte";
   import ToggleGuide from "./components/ToggleGuide.svelte";
+  import RadioGroupGuide from "./components/RadioGroupGuide.svelte";
 
   const items = [
     { text: "Installation", component: Installation },
@@ -28,6 +28,7 @@
     { text: "Text Area", component: TextAreaGuide },
     { text: "File Input", component: FileInputGuide },
     { text: "Checkbox", component: CheckboxGuide },
+    { text: "Radio Group", component: RadioGroupGuide },
     { text: "Toggle", component: ToggleGuide },
     { text: "Slider", component: SliderGuide },
     { text: "Auto Complete", component: AutocompleteGuide },

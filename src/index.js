@@ -13,3 +13,4 @@ export { default as Cascader } from './widgets/Cascader.svelte';
 export { default as FileInput } from './widgets/FileInput.svelte';
 export { default as TextArea } from './widgets/TextArea.svelte';
 export { default as Toggle } from './widgets/Toggle.svelte';
+export { default as RadioGroup } from './widgets/RadioGroup.svelte';
