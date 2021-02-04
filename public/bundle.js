@@ -11864,22 +11864,22 @@ var app = (function () {
     }
 
     function scaleValue(v, oldMin, oldMax, newMin, newMax) {
-    	if (v < oldMin) {
-    		return newMin;
+    	if (+v < +oldMin) {
+    		return +newMin;
     	}
 
-    	if (v > oldMax) {
-    		return newMax;
+    	if (+v > +oldMax) {
+    		return +newMax;
     	}
 
-    	const oldRange = oldMax - oldMin;
-    	const newRange = newMax - newMin;
+    	const oldRange = +oldMax - +oldMin;
+    	const newRange = +newMax - +newMin;
 
     	if (oldRange <= 0 || newRange <= 0) {
     		throw new Error("max should be greater than min");
     	}
 
-    	return +((v - oldMin) * newRange / oldRange + newMin).toPrecision(12);
+    	return ((+v - +oldMin) * newRange / oldRange + +newMin).toPrecision(12);
     }
 
     function instance$m($$self, $$props, $$invalidate) {
