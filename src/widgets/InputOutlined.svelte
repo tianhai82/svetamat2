@@ -21,6 +21,7 @@
   export let date = false;
   export let min = null;
   export let max = null;
+  export let autocomplete;
 
   let hasFocus = false;
   let iconCls = "";
@@ -140,6 +141,7 @@
         {disabled}
         {min}
         {max}
+        {autocomplete}
         on:input={handleInput}
         on:focus={() => (hasFocus = true)}
         on:blur={() => (hasFocus = false)}
