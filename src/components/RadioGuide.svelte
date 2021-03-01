@@ -94,7 +94,7 @@ let showCode = false;
         <Radio
             on:change={radioChanged}
             group="g1"
-            checked={selectedValue===value1}
+            {selectedValue}
             label={label1}
             bind:value={value1}
             color={color1}
@@ -102,7 +102,7 @@ let showCode = false;
         <Radio
             on:change={radioChanged}
             group="g1"
-            checked={selectedValue===value2}
+            {selectedValue}
             bind:value={value2}
             color={color2}
             disabled={disabled2}>
@@ -118,7 +118,7 @@ let showCode = false;
         </div>
         <div class="w-full flex flex-row flex-wrap">
             <div class="px-4 pb-2">
-                <Input hideDetails outlined readonly label="group1" value="g1" />
+                <Input hideDetails outlined readonly label="group" value="g1" />
             </div>
             <div class="px-4 pb-2">
                 <Input hideDetails outlined label="label1" bind:value={label1} />
@@ -135,9 +135,6 @@ let showCode = false;
         </div>
         <div class="w-full flex flex-row flex-wrap">
             <div class="px-4 pb-2">
-                <Input hideDetails outlined readonly label="group2" value="g1" />
-            </div>
-            <div class="px-4 pb-2">
                 <Input hideDetails outlined label="color2" bind:value={color2} />
             </div>
             <div class="px-4 pb-2">
@@ -152,30 +149,30 @@ let showCode = false;
     class:hidden={!showCode}
     class="my-2 bg-gray-200 rounded p-5 font-light">
     {`let selectedValue;
-    function radioChanged({
+function radioChanged({
     detail
-    }) {
+}) {
     selectedValue = detail
-    }
+}
 
-    <div class="mt-2 mb-1 flex justify-evenly">
-        <Radio
-            on:change={radioChanged}
-            group="g1"
-            checked={selectedValue===value1}
-            label={label1}
-            bind:value={value1}
-            color={color1}
-            disabled={disabled1} />
-        <Radio
-            on:change={radioChanged}
-            group="g1"
-            checked={selectedValue===value2}
-            bind:value={value2}
-            color={color2}
-            disabled={disabled2}>
-            <i class="material-icons text-blue-700">facebook</i>
-            <span class="text-orange-500">Radio button with slot</span>
-        </Radio>
-    </div>`}
+<div class="mt-2 mb-1 flex justify-evenly">
+    <Radio
+        on:change={radioChanged}
+        group="g1"
+        {selectedValue}
+        label={label1}
+        bind:value={value1}
+        color={color1}
+        disabled={disabled1} />
+    <Radio
+        on:change={radioChanged}
+        group="g1"
+        {selectedValue}
+        bind:value={value2}
+        color={color2}
+        disabled={disabled2}>
+        <i class="material-icons text-blue-700">facebook</i>
+        <span class="text-orange-500">Radio button with slot</span>
+    </Radio>
+</div>`}
 </pre>

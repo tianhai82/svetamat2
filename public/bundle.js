@@ -1527,7 +1527,7 @@ var app = (function () {
     		c() {
     			div = element("div");
     			t = text(/*helperText*/ ctx[3]);
-    			attr(div, "class", div_class_value = "" + (null_to_empty(/*helperTextCls*/ ctx[18]) + " svelte-1cjqtag"));
+    			attr(div, "class", div_class_value = "" + (null_to_empty(/*helperTextCls*/ ctx[19]) + " svelte-1cjqtag"));
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -1536,7 +1536,7 @@ var app = (function () {
     		p(ctx, dirty) {
     			if (dirty[0] & /*helperText*/ 8) set_data(t, /*helperText*/ ctx[3]);
 
-    			if (dirty[0] & /*helperTextCls*/ 262144 && div_class_value !== (div_class_value = "" + (null_to_empty(/*helperTextCls*/ ctx[18]) + " svelte-1cjqtag"))) {
+    			if (dirty[0] & /*helperTextCls*/ 524288 && div_class_value !== (div_class_value = "" + (null_to_empty(/*helperTextCls*/ ctx[19]) + " svelte-1cjqtag"))) {
     				attr(div, "class", div_class_value);
     			}
     		},
@@ -1590,15 +1590,16 @@ var app = (function () {
     			t5 = text(/*icon*/ ctx[4]);
     			t6 = space();
     			if (if_block) if_block.c();
-    			attr(label_1, "style", label_1_style_value = `${/*labelTopPadding*/ ctx[17]} max-width:${/*boxWidth*/ ctx[14]}px;`);
-    			attr(label_1, "class", label_1_class_value = "" + (null_to_empty(`${/*labelCls*/ ctx[15]} truncate`) + " svelte-1cjqtag"));
-    			attr(input, "type", /*type*/ ctx[12]);
+    			attr(label_1, "style", label_1_style_value = `${/*labelTopPadding*/ ctx[18]} max-width:${/*boxWidth*/ ctx[15]}px;`);
+    			attr(label_1, "class", label_1_class_value = "" + (null_to_empty(`${/*labelCls*/ ctx[16]} truncate`) + " svelte-1cjqtag"));
+    			attr(input, "type", /*type*/ ctx[13]);
     			input.readOnly = /*readonly*/ ctx[8];
     			input.value = /*value*/ ctx[0];
     			input.disabled = /*disabled*/ ctx[6];
     			attr(input, "min", /*min*/ ctx[9]);
     			attr(input, "max", /*max*/ ctx[10]);
-    			attr(input, "style", /*inputPadBottom*/ ctx[16]);
+    			attr(input, "autocomplete", /*autocomplete*/ ctx[11]);
+    			attr(input, "style", /*inputPadBottom*/ ctx[17]);
     			attr(input, "class", "pt-6 appearance-none bg-transparent border-none w-full\r\n        text-gray-800 px-2 focus:outline-none");
 
     			attr(i0, "class", i0_class_value = /*clearable*/ ctx[5] && !/*disabled*/ ctx[6]
@@ -1606,12 +1607,12 @@ var app = (function () {
     			: "");
 
     			toggle_class(i0, "hidden", !/*clearable*/ ctx[5] || /*disabled*/ ctx[6]);
-    			attr(i1, "class", i1_class_value = "" + (null_to_empty(/*iconCls*/ ctx[13]) + " svelte-1cjqtag"));
+    			attr(i1, "class", i1_class_value = "" + (null_to_empty(/*iconCls*/ ctx[14]) + " svelte-1cjqtag"));
     			toggle_class(i1, "opacity-50", /*disabled*/ ctx[6]);
     			attr(div0, "class", "float-right flex items-center mr-2 mt-3");
     			attr(div1, "class", "flex justify-between");
 
-    			attr(div2, "class", div2_class_value = "" + (null_to_empty(/*hasFocus*/ ctx[11]
+    			attr(div2, "class", div2_class_value = "" + (null_to_empty(/*hasFocus*/ ctx[12]
     			? `relative rounded-t border-b-2 bg-gray-300 ${/*borderColor*/ ctx[2]}`
     			: `relative rounded-t border-b border-gray-500${/*disabled*/ ctx[6]
 				? ""
@@ -1620,7 +1621,7 @@ var app = (function () {
     			toggle_class(div2, "opacity-50", /*disabled*/ ctx[6]);
     			toggle_class(div2, "disabled", /*disabled*/ ctx[6]);
     			attr(div3, "class", "flex flex-col");
-    			add_render_callback(() => /*div3_elementresize_handler*/ ctx[36].call(div3));
+    			add_render_callback(() => /*div3_elementresize_handler*/ ctx[37].call(div3));
     		},
     		m(target, anchor) {
     			insert(target, div3, anchor);
@@ -1639,19 +1640,19 @@ var app = (function () {
     			append(i1, t5);
     			append(div3, t6);
     			if (if_block) if_block.m(div3, null);
-    			div3_resize_listener = add_resize_listener(div3, /*div3_elementresize_handler*/ ctx[36].bind(div3));
+    			div3_resize_listener = add_resize_listener(div3, /*div3_elementresize_handler*/ ctx[37].bind(div3));
 
     			if (!mounted) {
     				dispose = [
-    					listen(input, "input", /*handleInput*/ ctx[20]),
-    					listen(input, "focus", /*focus_handler_1*/ ctx[34]),
-    					listen(input, "blur", /*blur_handler_1*/ ctx[35]),
-    					listen(input, "focus", /*focus_handler*/ ctx[29]),
-    					listen(input, "blur", /*blur_handler*/ ctx[30]),
-    					listen(input, "keydown", /*keydown_handler*/ ctx[31]),
-    					listen(input, "keyup", /*keyup_handler*/ ctx[32]),
-    					listen(input, "click", /*click_handler*/ ctx[33]),
-    					listen(i0, "click", /*clear*/ ctx[21])
+    					listen(input, "input", /*handleInput*/ ctx[21]),
+    					listen(input, "focus", /*focus_handler_1*/ ctx[35]),
+    					listen(input, "blur", /*blur_handler_1*/ ctx[36]),
+    					listen(input, "focus", /*focus_handler*/ ctx[30]),
+    					listen(input, "blur", /*blur_handler*/ ctx[31]),
+    					listen(input, "keydown", /*keydown_handler*/ ctx[32]),
+    					listen(input, "keyup", /*keyup_handler*/ ctx[33]),
+    					listen(input, "click", /*click_handler*/ ctx[34]),
+    					listen(i0, "click", /*clear*/ ctx[22])
     				];
 
     				mounted = true;
@@ -1660,16 +1661,16 @@ var app = (function () {
     		p(ctx, dirty) {
     			if (dirty[0] & /*label*/ 2) set_data(t0, /*label*/ ctx[1]);
 
-    			if (dirty[0] & /*labelTopPadding, boxWidth*/ 147456 && label_1_style_value !== (label_1_style_value = `${/*labelTopPadding*/ ctx[17]} max-width:${/*boxWidth*/ ctx[14]}px;`)) {
+    			if (dirty[0] & /*labelTopPadding, boxWidth*/ 294912 && label_1_style_value !== (label_1_style_value = `${/*labelTopPadding*/ ctx[18]} max-width:${/*boxWidth*/ ctx[15]}px;`)) {
     				attr(label_1, "style", label_1_style_value);
     			}
 
-    			if (dirty[0] & /*labelCls*/ 32768 && label_1_class_value !== (label_1_class_value = "" + (null_to_empty(`${/*labelCls*/ ctx[15]} truncate`) + " svelte-1cjqtag"))) {
+    			if (dirty[0] & /*labelCls*/ 65536 && label_1_class_value !== (label_1_class_value = "" + (null_to_empty(`${/*labelCls*/ ctx[16]} truncate`) + " svelte-1cjqtag"))) {
     				attr(label_1, "class", label_1_class_value);
     			}
 
-    			if (dirty[0] & /*type*/ 4096) {
-    				attr(input, "type", /*type*/ ctx[12]);
+    			if (dirty[0] & /*type*/ 8192) {
+    				attr(input, "type", /*type*/ ctx[13]);
     			}
 
     			if (dirty[0] & /*readonly*/ 256) {
@@ -1692,8 +1693,12 @@ var app = (function () {
     				attr(input, "max", /*max*/ ctx[10]);
     			}
 
-    			if (dirty[0] & /*inputPadBottom*/ 65536) {
-    				attr(input, "style", /*inputPadBottom*/ ctx[16]);
+    			if (dirty[0] & /*autocomplete*/ 2048) {
+    				attr(input, "autocomplete", /*autocomplete*/ ctx[11]);
+    			}
+
+    			if (dirty[0] & /*inputPadBottom*/ 131072) {
+    				attr(input, "style", /*inputPadBottom*/ ctx[17]);
     			}
 
     			if (dirty[0] & /*clearable, disabled*/ 96 && i0_class_value !== (i0_class_value = /*clearable*/ ctx[5] && !/*disabled*/ ctx[6]
@@ -1708,15 +1713,15 @@ var app = (function () {
 
     			if (dirty[0] & /*icon*/ 16) set_data(t5, /*icon*/ ctx[4]);
 
-    			if (dirty[0] & /*iconCls*/ 8192 && i1_class_value !== (i1_class_value = "" + (null_to_empty(/*iconCls*/ ctx[13]) + " svelte-1cjqtag"))) {
+    			if (dirty[0] & /*iconCls*/ 16384 && i1_class_value !== (i1_class_value = "" + (null_to_empty(/*iconCls*/ ctx[14]) + " svelte-1cjqtag"))) {
     				attr(i1, "class", i1_class_value);
     			}
 
-    			if (dirty[0] & /*iconCls, disabled*/ 8256) {
+    			if (dirty[0] & /*iconCls, disabled*/ 16448) {
     				toggle_class(i1, "opacity-50", /*disabled*/ ctx[6]);
     			}
 
-    			if (dirty[0] & /*hasFocus, borderColor, disabled*/ 2116 && div2_class_value !== (div2_class_value = "" + (null_to_empty(/*hasFocus*/ ctx[11]
+    			if (dirty[0] & /*hasFocus, borderColor, disabled*/ 4164 && div2_class_value !== (div2_class_value = "" + (null_to_empty(/*hasFocus*/ ctx[12]
     			? `relative rounded-t border-b-2 bg-gray-300 ${/*borderColor*/ ctx[2]}`
     			: `relative rounded-t border-b border-gray-500${/*disabled*/ ctx[6]
 				? ""
@@ -1724,11 +1729,11 @@ var app = (function () {
     				attr(div2, "class", div2_class_value);
     			}
 
-    			if (dirty[0] & /*hasFocus, borderColor, disabled, disabled*/ 2116) {
+    			if (dirty[0] & /*hasFocus, borderColor, disabled, disabled*/ 4164) {
     				toggle_class(div2, "opacity-50", /*disabled*/ ctx[6]);
     			}
 
-    			if (dirty[0] & /*hasFocus, borderColor, disabled, disabled*/ 2116) {
+    			if (dirty[0] & /*hasFocus, borderColor, disabled, disabled*/ 4164) {
     				toggle_class(div2, "disabled", /*disabled*/ ctx[6]);
     			}
 
@@ -1776,11 +1781,12 @@ var app = (function () {
     	let { date = false } = $$props;
     	let { min = null } = $$props;
     	let { max = null } = $$props;
+    	let { autocomplete } = $$props;
     	let hasFocus = false;
     	let iconCls = "";
     	let boxWidth;
     	const y = tweened(1, { duration: 50 });
-    	component_subscribe($$self, y, value => $$invalidate(28, $y = value));
+    	component_subscribe($$self, y, value => $$invalidate(29, $y = value));
     	let type = "text";
 
     	function handleInput(event) {
@@ -1801,7 +1807,7 @@ var app = (function () {
     	let inputPadBottom = "";
 
     	function setLabelColor(prefix) {
-    		$$invalidate(15, labelCls = `${prefix} ${labelColor}`);
+    		$$invalidate(16, labelCls = `${prefix} ${labelColor}`);
     	}
 
     	let valueEmpty = false;
@@ -1831,31 +1837,32 @@ var app = (function () {
     		bubble($$self, event);
     	}
 
-    	const focus_handler_1 = () => $$invalidate(11, hasFocus = true);
-    	const blur_handler_1 = () => $$invalidate(11, hasFocus = false);
+    	const focus_handler_1 = () => $$invalidate(12, hasFocus = true);
+    	const blur_handler_1 = () => $$invalidate(12, hasFocus = false);
 
     	function div3_elementresize_handler() {
     		boxWidth = this.clientWidth;
-    		$$invalidate(14, boxWidth);
+    		$$invalidate(15, boxWidth);
     	}
 
     	$$self.$$set = $$props => {
     		if ("label" in $$props) $$invalidate(1, label = $$props.label);
     		if ("value" in $$props) $$invalidate(0, value = $$props.value);
-    		if ("number" in $$props) $$invalidate(22, number = $$props.number);
+    		if ("number" in $$props) $$invalidate(23, number = $$props.number);
     		if ("borderColor" in $$props) $$invalidate(2, borderColor = $$props.borderColor);
-    		if ("labelColor" in $$props) $$invalidate(23, labelColor = $$props.labelColor);
+    		if ("labelColor" in $$props) $$invalidate(24, labelColor = $$props.labelColor);
     		if ("helperText" in $$props) $$invalidate(3, helperText = $$props.helperText);
-    		if ("helperTextColor" in $$props) $$invalidate(24, helperTextColor = $$props.helperTextColor);
+    		if ("helperTextColor" in $$props) $$invalidate(25, helperTextColor = $$props.helperTextColor);
     		if ("icon" in $$props) $$invalidate(4, icon = $$props.icon);
     		if ("clearable" in $$props) $$invalidate(5, clearable = $$props.clearable);
     		if ("disabled" in $$props) $$invalidate(6, disabled = $$props.disabled);
     		if ("hideDetails" in $$props) $$invalidate(7, hideDetails = $$props.hideDetails);
     		if ("readonly" in $$props) $$invalidate(8, readonly = $$props.readonly);
-    		if ("password" in $$props) $$invalidate(25, password = $$props.password);
-    		if ("date" in $$props) $$invalidate(26, date = $$props.date);
+    		if ("password" in $$props) $$invalidate(26, password = $$props.password);
+    		if ("date" in $$props) $$invalidate(27, date = $$props.date);
     		if ("min" in $$props) $$invalidate(9, min = $$props.min);
     		if ("max" in $$props) $$invalidate(10, max = $$props.max);
+    		if ("autocomplete" in $$props) $$invalidate(11, autocomplete = $$props.autocomplete);
     	};
 
     	let labelTopPadding;
@@ -1863,47 +1870,47 @@ var app = (function () {
 
     	$$self.$$.update = () => {
     		if ($$self.$$.dirty[0] & /*icon*/ 16) {
-    			 $$invalidate(13, iconCls = icon
+    			 $$invalidate(14, iconCls = icon
     			? "material-icons md-18 pointer-events-none"
     			: "hidden");
     		}
 
-    		if ($$self.$$.dirty[0] & /*password, number, date*/ 104857600) {
+    		if ($$self.$$.dirty[0] & /*password, number, date*/ 209715200) {
     			 if (password) {
-    				$$invalidate(12, type = "password");
+    				$$invalidate(13, type = "password");
     			} else if (number) {
-    				$$invalidate(12, type = "number");
+    				$$invalidate(13, type = "number");
     			} else if (date) {
-    				$$invalidate(12, type = "date");
+    				$$invalidate(13, type = "date");
     			} else {
-    				$$invalidate(12, type = "text");
+    				$$invalidate(13, type = "text");
     			}
     		}
 
-    		if ($$self.$$.dirty[0] & /*$y*/ 268435456) {
-    			 $$invalidate(17, labelTopPadding = `transform:translateY(${$y}rem);`);
+    		if ($$self.$$.dirty[0] & /*$y*/ 536870912) {
+    			 $$invalidate(18, labelTopPadding = `transform:translateY(${$y}rem);`);
     		}
 
-    		if ($$self.$$.dirty[0] & /*helperTextColor*/ 16777216) {
-    			 $$invalidate(18, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
+    		if ($$self.$$.dirty[0] & /*helperTextColor*/ 33554432) {
+    			 $$invalidate(19, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
     		}
 
     		if ($$self.$$.dirty[0] & /*value*/ 1) {
-    			 $$invalidate(27, valueEmpty = value == null || value.toString().length === 0);
+    			 $$invalidate(28, valueEmpty = value == null || value.toString().length === 0);
     		}
 
-    		if ($$self.$$.dirty[0] & /*hasFocus, type, valueEmpty*/ 134223872) {
+    		if ($$self.$$.dirty[0] & /*hasFocus, type, valueEmpty*/ 268447744) {
     			 if (hasFocus) {
     				y.set(0.25);
     				setLabelColor("absolute left-0 px-2 text-sm pointer-events-none");
-    				$$invalidate(16, inputPadBottom = "padding-bottom:7px");
+    				$$invalidate(17, inputPadBottom = "padding-bottom:7px");
     			} else {
-    				$$invalidate(16, inputPadBottom = "padding-bottom:8px");
-    				$$invalidate(15, labelCls = "absolute left-0 px-2 text-sm pointer-events-none text-gray-600");
+    				$$invalidate(17, inputPadBottom = "padding-bottom:8px");
+    				$$invalidate(16, labelCls = "absolute left-0 px-2 text-sm pointer-events-none text-gray-600");
 
     				if (type !== "date" && valueEmpty) {
     					y.set(1);
-    					$$invalidate(15, labelCls = "absolute left-0 px-2 pointer-events-none text-gray-600");
+    					$$invalidate(16, labelCls = "absolute left-0 px-2 pointer-events-none text-gray-600");
     				} else {
     					y.set(0.25);
     				}
@@ -1923,6 +1930,7 @@ var app = (function () {
     		readonly,
     		min,
     		max,
+    		autocomplete,
     		hasFocus,
     		type,
     		iconCls,
@@ -1965,20 +1973,21 @@ var app = (function () {
     			{
     				label: 1,
     				value: 0,
-    				number: 22,
+    				number: 23,
     				borderColor: 2,
-    				labelColor: 23,
+    				labelColor: 24,
     				helperText: 3,
-    				helperTextColor: 24,
+    				helperTextColor: 25,
     				icon: 4,
     				clearable: 5,
     				disabled: 6,
     				hideDetails: 7,
     				readonly: 8,
-    				password: 25,
-    				date: 26,
+    				password: 26,
+    				date: 27,
     				min: 9,
-    				max: 10
+    				max: 10,
+    				autocomplete: 11
     			},
     			[-1, -1]
     		);
@@ -1995,7 +2004,7 @@ var app = (function () {
     		c() {
     			div = element("div");
     			t = text(/*helperText*/ ctx[2]);
-    			attr(div, "class", /*helperTextCls*/ ctx[19]);
+    			attr(div, "class", /*helperTextCls*/ ctx[20]);
     		},
     		m(target, anchor) {
     			insert(target, div, anchor);
@@ -2004,8 +2013,8 @@ var app = (function () {
     		p(ctx, dirty) {
     			if (dirty[0] & /*helperText*/ 4) set_data(t, /*helperText*/ ctx[2]);
 
-    			if (dirty[0] & /*helperTextCls*/ 524288) {
-    				attr(div, "class", /*helperTextCls*/ ctx[19]);
+    			if (dirty[0] & /*helperTextCls*/ 1048576) {
+    				attr(div, "class", /*helperTextCls*/ ctx[20]);
     			}
     		},
     		d(detaching) {
@@ -2064,16 +2073,17 @@ var app = (function () {
     			t7 = text(/*icon*/ ctx[3]);
     			t8 = space();
     			if (if_block) if_block.c();
-    			attr(legend, "style", /*legendStyle*/ ctx[17]);
-    			attr(label_1, "style", label_1_style_value = `${/*labelTranslateStyle*/ ctx[18]} max-width:${/*boxWidth*/ ctx[14] - 16}px;`);
-    			attr(label_1, "class", label_1_class_value = `${/*labelCls*/ ctx[16]}absolute left-0 mx-2 pointer-events-none truncate`);
-    			add_render_callback(() => /*label_1_elementresize_handler*/ ctx[35].call(label_1));
-    			attr(input, "type", /*type*/ ctx[11]);
+    			attr(legend, "style", /*legendStyle*/ ctx[18]);
+    			attr(label_1, "style", label_1_style_value = `${/*labelTranslateStyle*/ ctx[19]} max-width:${/*boxWidth*/ ctx[15] - 16}px;`);
+    			attr(label_1, "class", label_1_class_value = `${/*labelCls*/ ctx[17]}absolute left-0 mx-2 pointer-events-none truncate`);
+    			add_render_callback(() => /*label_1_elementresize_handler*/ ctx[36].call(label_1));
+    			attr(input, "type", /*type*/ ctx[12]);
     			input.readOnly = /*readonly*/ ctx[7];
     			input.value = /*value*/ ctx[0];
     			input.disabled = /*disabled*/ ctx[5];
     			attr(input, "min", /*min*/ ctx[8]);
     			attr(input, "max", /*max*/ ctx[9]);
+    			attr(input, "autocomplete", /*autocomplete*/ ctx[10]);
     			set_style(input, "padding-bottom", "3px");
     			attr(input, "class", "h-8 appearance-none bg-transparent border-none w-full\r\n        text-gray-800 px-2 focus:outline-none");
 
@@ -2082,16 +2092,16 @@ var app = (function () {
     			: "");
 
     			toggle_class(i0, "hidden", !/*clearable*/ ctx[4] || /*disabled*/ ctx[5]);
-    			attr(i1, "class", /*iconCls*/ ctx[13]);
+    			attr(i1, "class", /*iconCls*/ ctx[14]);
     			toggle_class(i1, "opacity-50", /*disabled*/ ctx[5]);
     			attr(div0, "class", "float-right flex items-center mr-2 mb-1");
     			attr(div1, "class", "flex justify-between");
     			fieldset.disabled = /*disabled*/ ctx[5];
     			set_style(fieldset, "height", "59px");
-    			attr(fieldset, "class", fieldset_class_value = `${/*fieldsetCls*/ ctx[15]}relative rounded`);
+    			attr(fieldset, "class", fieldset_class_value = `${/*fieldsetCls*/ ctx[16]}relative rounded`);
     			toggle_class(fieldset, "opacity-50", /*disabled*/ ctx[5]);
     			attr(div2, "class", "flex flex-col");
-    			add_render_callback(() => /*div2_elementresize_handler*/ ctx[38].call(div2));
+    			add_render_callback(() => /*div2_elementresize_handler*/ ctx[39].call(div2));
     		},
     		m(target, anchor) {
     			insert(target, div2, anchor);
@@ -2101,7 +2111,7 @@ var app = (function () {
     			append(fieldset, t1);
     			append(fieldset, label_1);
     			append(label_1, t2);
-    			label_1_resize_listener = add_resize_listener(label_1, /*label_1_elementresize_handler*/ ctx[35].bind(label_1));
+    			label_1_resize_listener = add_resize_listener(label_1, /*label_1_elementresize_handler*/ ctx[36].bind(label_1));
     			append(fieldset, t3);
     			append(fieldset, div1);
     			append(div1, input);
@@ -2114,41 +2124,41 @@ var app = (function () {
     			append(i1, t7);
     			append(div2, t8);
     			if (if_block) if_block.m(div2, null);
-    			div2_resize_listener = add_resize_listener(div2, /*div2_elementresize_handler*/ ctx[38].bind(div2));
+    			div2_resize_listener = add_resize_listener(div2, /*div2_elementresize_handler*/ ctx[39].bind(div2));
 
     			if (!mounted) {
     				dispose = [
-    					listen(input, "input", /*handleInput*/ ctx[21]),
-    					listen(input, "focus", /*focus_handler_1*/ ctx[36]),
-    					listen(input, "blur", /*blur_handler_1*/ ctx[37]),
-    					listen(input, "focus", /*focus_handler*/ ctx[30]),
-    					listen(input, "blur", /*blur_handler*/ ctx[31]),
-    					listen(input, "keydown", /*keydown_handler*/ ctx[32]),
-    					listen(input, "keyup", /*keyup_handler*/ ctx[33]),
-    					listen(input, "click", /*click_handler*/ ctx[34]),
-    					listen(i0, "click", /*clear*/ ctx[22])
+    					listen(input, "input", /*handleInput*/ ctx[22]),
+    					listen(input, "focus", /*focus_handler_1*/ ctx[37]),
+    					listen(input, "blur", /*blur_handler_1*/ ctx[38]),
+    					listen(input, "focus", /*focus_handler*/ ctx[31]),
+    					listen(input, "blur", /*blur_handler*/ ctx[32]),
+    					listen(input, "keydown", /*keydown_handler*/ ctx[33]),
+    					listen(input, "keyup", /*keyup_handler*/ ctx[34]),
+    					listen(input, "click", /*click_handler*/ ctx[35]),
+    					listen(i0, "click", /*clear*/ ctx[23])
     				];
 
     				mounted = true;
     			}
     		},
     		p(ctx, dirty) {
-    			if (dirty[0] & /*legendStyle*/ 131072) {
-    				attr(legend, "style", /*legendStyle*/ ctx[17]);
+    			if (dirty[0] & /*legendStyle*/ 262144) {
+    				attr(legend, "style", /*legendStyle*/ ctx[18]);
     			}
 
     			if (dirty[0] & /*label*/ 2) set_data(t2, /*label*/ ctx[1]);
 
-    			if (dirty[0] & /*labelTranslateStyle, boxWidth*/ 278528 && label_1_style_value !== (label_1_style_value = `${/*labelTranslateStyle*/ ctx[18]} max-width:${/*boxWidth*/ ctx[14] - 16}px;`)) {
+    			if (dirty[0] & /*labelTranslateStyle, boxWidth*/ 557056 && label_1_style_value !== (label_1_style_value = `${/*labelTranslateStyle*/ ctx[19]} max-width:${/*boxWidth*/ ctx[15] - 16}px;`)) {
     				attr(label_1, "style", label_1_style_value);
     			}
 
-    			if (dirty[0] & /*labelCls*/ 65536 && label_1_class_value !== (label_1_class_value = `${/*labelCls*/ ctx[16]}absolute left-0 mx-2 pointer-events-none truncate`)) {
+    			if (dirty[0] & /*labelCls*/ 131072 && label_1_class_value !== (label_1_class_value = `${/*labelCls*/ ctx[17]}absolute left-0 mx-2 pointer-events-none truncate`)) {
     				attr(label_1, "class", label_1_class_value);
     			}
 
-    			if (dirty[0] & /*type*/ 2048) {
-    				attr(input, "type", /*type*/ ctx[11]);
+    			if (dirty[0] & /*type*/ 4096) {
+    				attr(input, "type", /*type*/ ctx[12]);
     			}
 
     			if (dirty[0] & /*readonly*/ 128) {
@@ -2171,6 +2181,10 @@ var app = (function () {
     				attr(input, "max", /*max*/ ctx[9]);
     			}
 
+    			if (dirty[0] & /*autocomplete*/ 1024) {
+    				attr(input, "autocomplete", /*autocomplete*/ ctx[10]);
+    			}
+
     			if (dirty[0] & /*clearable, disabled*/ 48 && i0_class_value !== (i0_class_value = /*clearable*/ ctx[4] && !/*disabled*/ ctx[5]
     			? "material-icons md-18 mr-2 cursor-pointer"
     			: "")) {
@@ -2183,11 +2197,11 @@ var app = (function () {
 
     			if (dirty[0] & /*icon*/ 8) set_data(t7, /*icon*/ ctx[3]);
 
-    			if (dirty[0] & /*iconCls*/ 8192) {
-    				attr(i1, "class", /*iconCls*/ ctx[13]);
+    			if (dirty[0] & /*iconCls*/ 16384) {
+    				attr(i1, "class", /*iconCls*/ ctx[14]);
     			}
 
-    			if (dirty[0] & /*iconCls, disabled*/ 8224) {
+    			if (dirty[0] & /*iconCls, disabled*/ 16416) {
     				toggle_class(i1, "opacity-50", /*disabled*/ ctx[5]);
     			}
 
@@ -2195,11 +2209,11 @@ var app = (function () {
     				fieldset.disabled = /*disabled*/ ctx[5];
     			}
 
-    			if (dirty[0] & /*fieldsetCls*/ 32768 && fieldset_class_value !== (fieldset_class_value = `${/*fieldsetCls*/ ctx[15]}relative rounded`)) {
+    			if (dirty[0] & /*fieldsetCls*/ 65536 && fieldset_class_value !== (fieldset_class_value = `${/*fieldsetCls*/ ctx[16]}relative rounded`)) {
     				attr(fieldset, "class", fieldset_class_value);
     			}
 
-    			if (dirty[0] & /*fieldsetCls, disabled*/ 32800) {
+    			if (dirty[0] & /*fieldsetCls, disabled*/ 65568) {
     				toggle_class(fieldset, "opacity-50", /*disabled*/ ctx[5]);
     			}
 
@@ -2248,11 +2262,12 @@ var app = (function () {
     	let { date = false } = $$props;
     	let { min = null } = $$props;
     	let { max = null } = $$props;
+    	let { autocomplete } = $$props;
     	let hasFocus = false;
     	let iconCls = "";
     	let boxWidth;
     	const y = tweened(0.75, { duration: 50 });
-    	component_subscribe($$self, y, value => $$invalidate(29, $y = value));
+    	component_subscribe($$self, y, value => $$invalidate(30, $y = value));
     	let type = "text";
 
     	function handleInput(event) {
@@ -2275,21 +2290,21 @@ var app = (function () {
     	let labelWidth;
 
     	function setFocusState() {
-    		$$invalidate(16, labelCls = `text-sm ${labelColor} `);
+    		$$invalidate(17, labelCls = `text-sm ${labelColor} `);
     		y.set(-1.35);
-    		$$invalidate(15, fieldsetCls = `border-2 ${borderColor} `);
+    		$$invalidate(16, fieldsetCls = `border-2 ${borderColor} `);
     	}
 
     	function setFieldsetCls(cls) {
-    		$$invalidate(15, fieldsetCls = cls + " ");
+    		$$invalidate(16, fieldsetCls = cls + " ");
     	}
 
     	function setLabelCls(cls) {
-    		$$invalidate(16, labelCls = cls + " ");
+    		$$invalidate(17, labelCls = cls + " ");
     	}
 
     	function setLegendStyle(style) {
-    		$$invalidate(17, legendStyle = style);
+    		$$invalidate(18, legendStyle = style);
     	}
 
     	function clear() {
@@ -2319,67 +2334,68 @@ var app = (function () {
 
     	function label_1_elementresize_handler() {
     		labelWidth = this.clientWidth;
-    		$$invalidate(12, labelWidth);
+    		$$invalidate(13, labelWidth);
     	}
 
-    	const focus_handler_1 = () => $$invalidate(10, hasFocus = true);
-    	const blur_handler_1 = () => $$invalidate(10, hasFocus = false);
+    	const focus_handler_1 = () => $$invalidate(11, hasFocus = true);
+    	const blur_handler_1 = () => $$invalidate(11, hasFocus = false);
 
     	function div2_elementresize_handler() {
     		boxWidth = this.clientWidth;
-    		$$invalidate(14, boxWidth);
+    		$$invalidate(15, boxWidth);
     	}
 
     	$$self.$$set = $$props => {
     		if ("label" in $$props) $$invalidate(1, label = $$props.label);
     		if ("value" in $$props) $$invalidate(0, value = $$props.value);
-    		if ("number" in $$props) $$invalidate(23, number = $$props.number);
-    		if ("borderColor" in $$props) $$invalidate(24, borderColor = $$props.borderColor);
-    		if ("labelColor" in $$props) $$invalidate(25, labelColor = $$props.labelColor);
+    		if ("number" in $$props) $$invalidate(24, number = $$props.number);
+    		if ("borderColor" in $$props) $$invalidate(25, borderColor = $$props.borderColor);
+    		if ("labelColor" in $$props) $$invalidate(26, labelColor = $$props.labelColor);
     		if ("helperText" in $$props) $$invalidate(2, helperText = $$props.helperText);
-    		if ("helperTextColor" in $$props) $$invalidate(26, helperTextColor = $$props.helperTextColor);
+    		if ("helperTextColor" in $$props) $$invalidate(27, helperTextColor = $$props.helperTextColor);
     		if ("icon" in $$props) $$invalidate(3, icon = $$props.icon);
     		if ("clearable" in $$props) $$invalidate(4, clearable = $$props.clearable);
     		if ("disabled" in $$props) $$invalidate(5, disabled = $$props.disabled);
     		if ("hideDetails" in $$props) $$invalidate(6, hideDetails = $$props.hideDetails);
     		if ("readonly" in $$props) $$invalidate(7, readonly = $$props.readonly);
-    		if ("password" in $$props) $$invalidate(27, password = $$props.password);
-    		if ("date" in $$props) $$invalidate(28, date = $$props.date);
+    		if ("password" in $$props) $$invalidate(28, password = $$props.password);
+    		if ("date" in $$props) $$invalidate(29, date = $$props.date);
     		if ("min" in $$props) $$invalidate(8, min = $$props.min);
     		if ("max" in $$props) $$invalidate(9, max = $$props.max);
+    		if ("autocomplete" in $$props) $$invalidate(10, autocomplete = $$props.autocomplete);
     	};
 
     	let labelTranslateStyle;
     	let helperTextCls;
 
     	$$self.$$.update = () => {
-    		if ($$self.$$.dirty[0] & /*password, number, date*/ 411041792) {
+    		if ($$self.$$.dirty[0] & /*password, number, date*/ 822083584) {
     			 if (password) {
-    				$$invalidate(11, type = "password");
+    				$$invalidate(12, type = "password");
     			} else if (number) {
-    				$$invalidate(11, type = "number");
+    				$$invalidate(12, type = "number");
     			} else if (date) {
-    				$$invalidate(11, type = "date");
+    				$$invalidate(12, type = "date");
     			} else {
-    				$$invalidate(11, type = "text");
+    				$$invalidate(12, type = "text");
     			}
     		}
 
-    		if ($$self.$$.dirty[0] & /*$y*/ 536870912) {
-    			 $$invalidate(18, labelTranslateStyle = `transform:translateY(${$y}rem);`);
+    		if ($$self.$$.dirty[0] & /*$y*/ 1073741824) {
+    			 $$invalidate(19, labelTranslateStyle = `transform:translateY(${$y}rem);`);
     		}
 
-    		if ($$self.$$.dirty[0] & /*helperTextColor*/ 67108864) {
-    			 $$invalidate(19, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
+    		if ($$self.$$.dirty[0] & /*helperTextColor*/ 134217728) {
+    			 $$invalidate(20, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
     		}
 
     		if ($$self.$$.dirty[0] & /*icon*/ 8) {
-    			 $$invalidate(13, iconCls = icon
+    			 $$invalidate(14, iconCls = icon
     			? "material-icons md-18 pointer-events-none"
     			: "hidden");
     		}
 
-    		if ($$self.$$.dirty[0] & /*labelWidth, hasFocus, type, value*/ 7169) {
+    		if ($$self.$$.dirty[0] & /*labelWidth, hasFocus, type, value*/ 14337) {
     			 if (labelWidth) {
     				if (!hasFocus && type !== "date" && (value == null || value.toString().length === 0)) {
     					setLegendStyle("");
@@ -2389,7 +2405,7 @@ var app = (function () {
     			}
     		}
 
-    		if ($$self.$$.dirty[0] & /*hasFocus, disabled, type, value*/ 3105) {
+    		if ($$self.$$.dirty[0] & /*hasFocus, disabled, type, value*/ 6177) {
     			 if (hasFocus) {
     				setFocusState();
     			} else {
@@ -2421,6 +2437,7 @@ var app = (function () {
     		readonly,
     		min,
     		max,
+    		autocomplete,
     		hasFocus,
     		type,
     		labelWidth,
@@ -2466,20 +2483,21 @@ var app = (function () {
     			{
     				label: 1,
     				value: 0,
-    				number: 23,
-    				borderColor: 24,
-    				labelColor: 25,
+    				number: 24,
+    				borderColor: 25,
+    				labelColor: 26,
     				helperText: 2,
-    				helperTextColor: 26,
+    				helperTextColor: 27,
     				icon: 3,
     				clearable: 4,
     				disabled: 5,
     				hideDetails: 6,
     				readonly: 7,
-    				password: 27,
-    				date: 28,
+    				password: 28,
+    				date: 29,
     				min: 8,
-    				max: 9
+    				max: 9,
+    				autocomplete: 10
     			},
     			[-1, -1]
     		);
@@ -2494,7 +2512,7 @@ var app = (function () {
     	let current;
 
     	function inputoutlined_value_binding(value) {
-    		/*inputoutlined_value_binding*/ ctx[25].call(null, value);
+    		/*inputoutlined_value_binding*/ ctx[26].call(null, value);
     	}
 
     	let inputoutlined_props = {
@@ -2512,6 +2530,7 @@ var app = (function () {
     		date: /*date*/ ctx[14],
     		min: /*min*/ ctx[15],
     		max: /*max*/ ctx[16],
+    		autocomplete: /*autocomplete*/ ctx[17],
     		helperTextColor: /*helperTextColor*/ ctx[6]
     	};
 
@@ -2521,13 +2540,13 @@ var app = (function () {
 
     	inputoutlined = new InputOutlined({ props: inputoutlined_props });
     	binding_callbacks.push(() => bind(inputoutlined, "value", inputoutlined_value_binding));
-    	inputoutlined.$on("focus", /*focus_handler_1*/ ctx[26]);
-    	inputoutlined.$on("blur", /*blur_handler_1*/ ctx[27]);
-    	inputoutlined.$on("keydown", /*keydown_handler_1*/ ctx[28]);
-    	inputoutlined.$on("keyup", /*keyup_handler_1*/ ctx[29]);
-    	inputoutlined.$on("clear", /*clear_handler_1*/ ctx[30]);
-    	inputoutlined.$on("click", /*click_handler_1*/ ctx[31]);
-    	inputoutlined.$on("input", /*input_handler_1*/ ctx[32]);
+    	inputoutlined.$on("focus", /*focus_handler_1*/ ctx[27]);
+    	inputoutlined.$on("blur", /*blur_handler_1*/ ctx[28]);
+    	inputoutlined.$on("keydown", /*keydown_handler_1*/ ctx[29]);
+    	inputoutlined.$on("keyup", /*keyup_handler_1*/ ctx[30]);
+    	inputoutlined.$on("clear", /*clear_handler_1*/ ctx[31]);
+    	inputoutlined.$on("click", /*click_handler_1*/ ctx[32]);
+    	inputoutlined.$on("input", /*input_handler_1*/ ctx[33]);
 
     	return {
     		c() {
@@ -2553,6 +2572,7 @@ var app = (function () {
     			if (dirty[0] & /*date*/ 16384) inputoutlined_changes.date = /*date*/ ctx[14];
     			if (dirty[0] & /*min*/ 32768) inputoutlined_changes.min = /*min*/ ctx[15];
     			if (dirty[0] & /*max*/ 65536) inputoutlined_changes.max = /*max*/ ctx[16];
+    			if (dirty[0] & /*autocomplete*/ 131072) inputoutlined_changes.autocomplete = /*autocomplete*/ ctx[17];
     			if (dirty[0] & /*helperTextColor*/ 64) inputoutlined_changes.helperTextColor = /*helperTextColor*/ ctx[6];
 
     			if (!updating_value && dirty[0] & /*value*/ 1) {
@@ -2578,14 +2598,14 @@ var app = (function () {
     	};
     }
 
-    // (24:0) {#if !outlined}
+    // (25:0) {#if !outlined}
     function create_if_block$3(ctx) {
     	let inputstd;
     	let updating_value;
     	let current;
 
     	function inputstd_value_binding(value) {
-    		/*inputstd_value_binding*/ ctx[17].call(null, value);
+    		/*inputstd_value_binding*/ ctx[18].call(null, value);
     	}
 
     	let inputstd_props = {
@@ -2603,6 +2623,7 @@ var app = (function () {
     		date: /*date*/ ctx[14],
     		min: /*min*/ ctx[15],
     		max: /*max*/ ctx[16],
+    		autocomplete: /*autocomplete*/ ctx[17],
     		helperTextColor: /*helperTextColor*/ ctx[6]
     	};
 
@@ -2612,13 +2633,13 @@ var app = (function () {
 
     	inputstd = new InputStd({ props: inputstd_props });
     	binding_callbacks.push(() => bind(inputstd, "value", inputstd_value_binding));
-    	inputstd.$on("focus", /*focus_handler*/ ctx[18]);
-    	inputstd.$on("blur", /*blur_handler*/ ctx[19]);
-    	inputstd.$on("keydown", /*keydown_handler*/ ctx[20]);
-    	inputstd.$on("keyup", /*keyup_handler*/ ctx[21]);
-    	inputstd.$on("clear", /*clear_handler*/ ctx[22]);
-    	inputstd.$on("click", /*click_handler*/ ctx[23]);
-    	inputstd.$on("input", /*input_handler*/ ctx[24]);
+    	inputstd.$on("focus", /*focus_handler*/ ctx[19]);
+    	inputstd.$on("blur", /*blur_handler*/ ctx[20]);
+    	inputstd.$on("keydown", /*keydown_handler*/ ctx[21]);
+    	inputstd.$on("keyup", /*keyup_handler*/ ctx[22]);
+    	inputstd.$on("clear", /*clear_handler*/ ctx[23]);
+    	inputstd.$on("click", /*click_handler*/ ctx[24]);
+    	inputstd.$on("input", /*input_handler*/ ctx[25]);
 
     	return {
     		c() {
@@ -2644,6 +2665,7 @@ var app = (function () {
     			if (dirty[0] & /*date*/ 16384) inputstd_changes.date = /*date*/ ctx[14];
     			if (dirty[0] & /*min*/ 32768) inputstd_changes.min = /*min*/ ctx[15];
     			if (dirty[0] & /*max*/ 65536) inputstd_changes.max = /*max*/ ctx[16];
+    			if (dirty[0] & /*autocomplete*/ 131072) inputstd_changes.autocomplete = /*autocomplete*/ ctx[17];
     			if (dirty[0] & /*helperTextColor*/ 64) inputstd_changes.helperTextColor = /*helperTextColor*/ ctx[6];
 
     			if (!updating_value && dirty[0] & /*value*/ 1) {
@@ -2756,6 +2778,7 @@ var app = (function () {
     	let { date = false } = $$props;
     	let { min = null } = $$props;
     	let { max = null } = $$props;
+    	let { autocomplete } = $$props;
 
     	function inputstd_value_binding(value$1) {
     		value = value$1;
@@ -2841,6 +2864,7 @@ var app = (function () {
     		if ("date" in $$props) $$invalidate(14, date = $$props.date);
     		if ("min" in $$props) $$invalidate(15, min = $$props.min);
     		if ("max" in $$props) $$invalidate(16, max = $$props.max);
+    		if ("autocomplete" in $$props) $$invalidate(17, autocomplete = $$props.autocomplete);
     	};
 
     	return [
@@ -2861,6 +2885,7 @@ var app = (function () {
     		date,
     		min,
     		max,
+    		autocomplete,
     		inputstd_value_binding,
     		focus_handler,
     		blur_handler,
@@ -2907,7 +2932,8 @@ var app = (function () {
     				password: 13,
     				date: 14,
     				min: 15,
-    				max: 16
+    				max: 16,
+    				autocomplete: 17
     			},
     			[-1, -1]
     		);
@@ -11857,10 +11883,10 @@ var app = (function () {
 
     function roundToStep(v, step) {
     	if (step == null) {
-    		return v;
+    		return +v;
     	}
 
-    	return Math.round(v / step) * step;
+    	return Math.round(+v / +step) * +step;
     }
 
     function scaleValue(v, oldMin, oldMax, newMin, newMax) {
@@ -18848,7 +18874,7 @@ let keywordsFunction = function (item) {
     	};
     }
 
-    // (31:12) {#if checked }
+    // (31:12) {#if selectedValue === value }
     function create_if_block_1$3(ctx) {
     	let t;
 
@@ -18944,7 +18970,7 @@ let keywordsFunction = function (item) {
     	let dispose;
 
     	function select_block_type(ctx, dirty) {
-    		if (/*checked*/ ctx[3]) return create_if_block_1$3;
+    		if (/*selectedValue*/ ctx[3] === /*value*/ ctx[1]) return create_if_block_1$3;
     		return create_else_block_1$1;
     	}
 
@@ -19093,7 +19119,7 @@ let keywordsFunction = function (item) {
     	let { label = "" } = $$props;
     	let { value = "" } = $$props;
     	let { group = "" } = $$props;
-    	let { checked = false } = $$props;
+    	let { selectedValue = "" } = $$props;
     	let { color = "text-black" } = $$props;
     	let { disabled = false } = $$props;
 
@@ -19112,7 +19138,7 @@ let keywordsFunction = function (item) {
     		if ("label" in $$props) $$invalidate(0, label = $$props.label);
     		if ("value" in $$props) $$invalidate(1, value = $$props.value);
     		if ("group" in $$props) $$invalidate(2, group = $$props.group);
-    		if ("checked" in $$props) $$invalidate(3, checked = $$props.checked);
+    		if ("selectedValue" in $$props) $$invalidate(3, selectedValue = $$props.selectedValue);
     		if ("color" in $$props) $$invalidate(4, color = $$props.color);
     		if ("disabled" in $$props) $$invalidate(5, disabled = $$props.disabled);
     		if ("$$scope" in $$props) $$invalidate(8, $$scope = $$props.$$scope);
@@ -19122,7 +19148,7 @@ let keywordsFunction = function (item) {
     		label,
     		value,
     		group,
-    		checked,
+    		selectedValue,
     		color,
     		disabled,
     		handleChange,
@@ -19142,7 +19168,7 @@ let keywordsFunction = function (item) {
     			label: 0,
     			value: 1,
     			group: 2,
-    			checked: 3,
+    			selectedValue: 3,
     			color: 4,
     			disabled: 5
     		});
@@ -19167,7 +19193,7 @@ let keywordsFunction = function (item) {
     	};
     }
 
-    // (102:8) <Radio             on:change={radioChanged}             group="g1"             checked={selectedValue===value2}             bind:value={value2}             color={color2}             disabled={disabled2}>
+    // (102:8) <Radio             on:change={radioChanged}             group="g1"             {selectedValue}             bind:value={value2}             color={color2}             disabled={disabled2}>
     function create_default_slot$d(ctx) {
     	let i;
     	let t1;
@@ -19201,7 +19227,7 @@ let keywordsFunction = function (item) {
     	let t1;
     	let div35;
     	let t59;
-    	let div51;
+    	let div50;
     	let h31;
     	let div36;
     	let t61;
@@ -19215,7 +19241,7 @@ let keywordsFunction = function (item) {
     	let radio1;
     	let updating_value_1;
     	let t64;
-    	let div50;
+    	let div49;
     	let div39;
     	let div38;
     	let checkbox1;
@@ -19238,18 +19264,15 @@ let keywordsFunction = function (item) {
     	let checkbox2;
     	let updating_checked_2;
     	let t69;
-    	let div49;
+    	let div48;
     	let div46;
     	let input3;
+    	let updating_value_4;
     	let t70;
     	let div47;
     	let input4;
-    	let updating_value_4;
-    	let t71;
-    	let div48;
-    	let input5;
     	let updating_value_5;
-    	let t72;
+    	let t71;
     	let pre;
     	let current;
 
@@ -19275,7 +19298,7 @@ let keywordsFunction = function (item) {
 
     	let radio0_props = {
     		group: "g1",
-    		checked: /*selectedValue*/ ctx[7] === /*value1*/ ctx[1],
+    		selectedValue: /*selectedValue*/ ctx[7],
     		label: /*label1*/ ctx[0],
     		color: /*color1*/ ctx[2],
     		disabled: /*disabled1*/ ctx[3]
@@ -19295,7 +19318,7 @@ let keywordsFunction = function (item) {
 
     	let radio1_props = {
     		group: "g1",
-    		checked: /*selectedValue*/ ctx[7] === /*value2*/ ctx[4],
+    		selectedValue: /*selectedValue*/ ctx[7],
     		color: /*color2*/ ctx[5],
     		disabled: /*disabled2*/ ctx[6],
     		$$slots: { default: [create_default_slot$d] },
@@ -19328,7 +19351,7 @@ let keywordsFunction = function (item) {
     				hideDetails: true,
     				outlined: true,
     				readonly: true,
-    				label: "group1",
+    				label: "group",
     				value: "g1"
     			}
     		});
@@ -19380,49 +19403,39 @@ let keywordsFunction = function (item) {
     	checkbox2 = new Checkbox({ props: checkbox2_props });
     	binding_callbacks.push(() => bind(checkbox2, "checked", checkbox2_checked_binding));
 
-    	input3 = new Input({
-    			props: {
-    				hideDetails: true,
-    				outlined: true,
-    				readonly: true,
-    				label: "group2",
-    				value: "g1"
-    			}
-    		});
-
-    	function input4_value_binding(value) {
-    		/*input4_value_binding*/ ctx[17].call(null, value);
+    	function input3_value_binding(value) {
+    		/*input3_value_binding*/ ctx[17].call(null, value);
     	}
 
-    	let input4_props = {
+    	let input3_props = {
     		hideDetails: true,
     		outlined: true,
     		label: "color2"
     	};
 
     	if (/*color2*/ ctx[5] !== void 0) {
-    		input4_props.value = /*color2*/ ctx[5];
+    		input3_props.value = /*color2*/ ctx[5];
     	}
 
-    	input4 = new Input({ props: input4_props });
-    	binding_callbacks.push(() => bind(input4, "value", input4_value_binding));
+    	input3 = new Input({ props: input3_props });
+    	binding_callbacks.push(() => bind(input3, "value", input3_value_binding));
 
-    	function input5_value_binding(value) {
-    		/*input5_value_binding*/ ctx[18].call(null, value);
+    	function input4_value_binding(value) {
+    		/*input4_value_binding*/ ctx[18].call(null, value);
     	}
 
-    	let input5_props = {
+    	let input4_props = {
     		hideDetails: true,
     		outlined: true,
     		label: "Selected Value"
     	};
 
     	if (/*selectedValue*/ ctx[7] !== void 0) {
-    		input5_props.value = /*selectedValue*/ ctx[7];
+    		input4_props.value = /*selectedValue*/ ctx[7];
     	}
 
-    	input5 = new Input({ props: input5_props });
-    	binding_callbacks.push(() => bind(input5, "value", input5_value_binding));
+    	input4 = new Input({ props: input4_props });
+    	binding_callbacks.push(() => bind(input4, "value", input4_value_binding));
 
     	return {
     		c() {
@@ -19462,7 +19475,7 @@ let keywordsFunction = function (item) {
         <div class="table-cell py-3 px-3 border-b border-gray-400">false</div></div>`;
 
     			t59 = space();
-    			div51 = element("div");
+    			div50 = element("div");
     			h31 = element("h3");
     			div36 = element("div");
     			div36.textContent = "Demo";
@@ -19474,7 +19487,7 @@ let keywordsFunction = function (item) {
     			t63 = space();
     			create_component(radio1.$$.fragment);
     			t64 = space();
-    			div50 = element("div");
+    			div49 = element("div");
     			div39 = element("div");
     			div38 = element("div");
     			create_component(checkbox1.$$.fragment);
@@ -19493,45 +19506,42 @@ let keywordsFunction = function (item) {
     			div44 = element("div");
     			create_component(checkbox2.$$.fragment);
     			t69 = space();
-    			div49 = element("div");
+    			div48 = element("div");
     			div46 = element("div");
     			create_component(input3.$$.fragment);
     			t70 = space();
     			div47 = element("div");
     			create_component(input4.$$.fragment);
     			t71 = space();
-    			div48 = element("div");
-    			create_component(input5.$$.fragment);
-    			t72 = space();
     			pre = element("pre");
 
     			pre.textContent = `${`let selectedValue;
-    function radioChanged({
+function radioChanged({
     detail
-    }) {
+}) {
     selectedValue = detail
-    }
+}
 
-    <div class="mt-2 mb-1 flex justify-evenly">
-        <Radio
-            on:change={radioChanged}
-            group="g1"
-            checked={selectedValue===value1}
-            label={label1}
-            bind:value={value1}
-            color={color1}
-            disabled={disabled1} />
-        <Radio
-            on:change={radioChanged}
-            group="g1"
-            checked={selectedValue===value2}
-            bind:value={value2}
-            color={color2}
-            disabled={disabled2}>
-            <i class="material-icons text-blue-700">facebook</i>
-            <span class="text-orange-500">Radio button with slot</span>
-        </Radio>
-    </div>`}`;
+<div class="mt-2 mb-1 flex justify-evenly">
+    <Radio
+        on:change={radioChanged}
+        group="g1"
+        {selectedValue}
+        label={label1}
+        bind:value={value1}
+        color={color1}
+        disabled={disabled1} />
+    <Radio
+        on:change={radioChanged}
+        group="g1"
+        {selectedValue}
+        bind:value={value2}
+        color={color2}
+        disabled={disabled2}>
+        <i class="material-icons text-blue-700">facebook</i>
+        <span class="text-orange-500">Radio button with slot</span>
+    </Radio>
+</div>`}`;
 
     			attr(h2, "class", "text-xl ml-4 font-semibold my-6");
     			attr(div35, "class", "bg-gray-200 rounded my-4 px-4 table w-full");
@@ -19548,10 +19558,9 @@ let keywordsFunction = function (item) {
     			attr(div45, "class", "w-full flex flex-row flex-wrap");
     			attr(div46, "class", "px-4 pb-2");
     			attr(div47, "class", "px-4 pb-2");
-    			attr(div48, "class", "px-4 pb-2");
-    			attr(div49, "class", "w-full flex flex-row flex-wrap");
-    			attr(div50, "class", "border border-gray-500 rounded px-3 py-4 w-full");
-    			attr(div51, "class", "bg-gray-200 rounded p-4 w-full");
+    			attr(div48, "class", "w-full flex flex-row flex-wrap");
+    			attr(div49, "class", "border border-gray-500 rounded px-3 py-4 w-full");
+    			attr(div50, "class", "bg-gray-200 rounded p-4 w-full");
     			attr(pre, "class", "my-2 bg-gray-200 rounded p-5 font-light");
     			toggle_class(pre, "hidden", !/*showCode*/ ctx[8]);
     		},
@@ -19560,23 +19569,23 @@ let keywordsFunction = function (item) {
     			insert(target, t1, anchor);
     			insert(target, div35, anchor);
     			insert(target, t59, anchor);
-    			insert(target, div51, anchor);
-    			append(div51, h31);
+    			insert(target, div50, anchor);
+    			append(div50, h31);
     			append(h31, div36);
     			append(h31, t61);
     			mount_component(checkbox0, h31, null);
-    			append(div51, t62);
-    			append(div51, div37);
+    			append(div50, t62);
+    			append(div50, div37);
     			mount_component(radio0, div37, null);
     			append(div37, t63);
     			mount_component(radio1, div37, null);
-    			append(div51, t64);
-    			append(div51, div50);
-    			append(div50, div39);
+    			append(div50, t64);
+    			append(div50, div49);
+    			append(div49, div39);
     			append(div39, div38);
     			mount_component(checkbox1, div38, null);
-    			append(div50, t65);
-    			append(div50, div43);
+    			append(div49, t65);
+    			append(div49, div43);
     			append(div43, div40);
     			mount_component(input0, div40, null);
     			append(div43, t66);
@@ -19585,21 +19594,18 @@ let keywordsFunction = function (item) {
     			append(div43, t67);
     			append(div43, div42);
     			mount_component(input2, div42, null);
-    			append(div50, t68);
-    			append(div50, div45);
+    			append(div49, t68);
+    			append(div49, div45);
     			append(div45, div44);
     			mount_component(checkbox2, div44, null);
-    			append(div50, t69);
-    			append(div50, div49);
-    			append(div49, div46);
-    			mount_component(input3, div46, null);
-    			append(div49, t70);
-    			append(div49, div47);
-    			mount_component(input4, div47, null);
-    			append(div49, t71);
+    			append(div49, t69);
     			append(div49, div48);
-    			mount_component(input5, div48, null);
-    			insert(target, t72, anchor);
+    			append(div48, div46);
+    			mount_component(input3, div46, null);
+    			append(div48, t70);
+    			append(div48, div47);
+    			mount_component(input4, div47, null);
+    			insert(target, t71, anchor);
     			insert(target, pre, anchor);
     			current = true;
     		},
@@ -19618,7 +19624,7 @@ let keywordsFunction = function (item) {
 
     			checkbox0.$set(checkbox0_changes);
     			const radio0_changes = {};
-    			if (dirty & /*selectedValue, value1*/ 130) radio0_changes.checked = /*selectedValue*/ ctx[7] === /*value1*/ ctx[1];
+    			if (dirty & /*selectedValue*/ 128) radio0_changes.selectedValue = /*selectedValue*/ ctx[7];
     			if (dirty & /*label1*/ 1) radio0_changes.label = /*label1*/ ctx[0];
     			if (dirty & /*color1*/ 4) radio0_changes.color = /*color1*/ ctx[2];
     			if (dirty & /*disabled1*/ 8) radio0_changes.disabled = /*disabled1*/ ctx[3];
@@ -19631,7 +19637,7 @@ let keywordsFunction = function (item) {
 
     			radio0.$set(radio0_changes);
     			const radio1_changes = {};
-    			if (dirty & /*selectedValue, value2*/ 144) radio1_changes.checked = /*selectedValue*/ ctx[7] === /*value2*/ ctx[4];
+    			if (dirty & /*selectedValue*/ 128) radio1_changes.selectedValue = /*selectedValue*/ ctx[7];
     			if (dirty & /*color2*/ 32) radio1_changes.color = /*color2*/ ctx[5];
     			if (dirty & /*disabled2*/ 64) radio1_changes.disabled = /*disabled2*/ ctx[6];
 
@@ -19682,24 +19688,24 @@ let keywordsFunction = function (item) {
     			}
 
     			checkbox2.$set(checkbox2_changes);
-    			const input4_changes = {};
+    			const input3_changes = {};
 
     			if (!updating_value_4 && dirty & /*color2*/ 32) {
     				updating_value_4 = true;
-    				input4_changes.value = /*color2*/ ctx[5];
+    				input3_changes.value = /*color2*/ ctx[5];
     				add_flush_callback(() => updating_value_4 = false);
     			}
 
-    			input4.$set(input4_changes);
-    			const input5_changes = {};
+    			input3.$set(input3_changes);
+    			const input4_changes = {};
 
     			if (!updating_value_5 && dirty & /*selectedValue*/ 128) {
     				updating_value_5 = true;
-    				input5_changes.value = /*selectedValue*/ ctx[7];
+    				input4_changes.value = /*selectedValue*/ ctx[7];
     				add_flush_callback(() => updating_value_5 = false);
     			}
 
-    			input5.$set(input5_changes);
+    			input4.$set(input4_changes);
 
     			if (dirty & /*showCode*/ 256) {
     				toggle_class(pre, "hidden", !/*showCode*/ ctx[8]);
@@ -19717,7 +19723,6 @@ let keywordsFunction = function (item) {
     			transition_in(checkbox2.$$.fragment, local);
     			transition_in(input3.$$.fragment, local);
     			transition_in(input4.$$.fragment, local);
-    			transition_in(input5.$$.fragment, local);
     			current = true;
     		},
     		o(local) {
@@ -19731,7 +19736,6 @@ let keywordsFunction = function (item) {
     			transition_out(checkbox2.$$.fragment, local);
     			transition_out(input3.$$.fragment, local);
     			transition_out(input4.$$.fragment, local);
-    			transition_out(input5.$$.fragment, local);
     			current = false;
     		},
     		d(detaching) {
@@ -19739,7 +19743,7 @@ let keywordsFunction = function (item) {
     			if (detaching) detach(t1);
     			if (detaching) detach(div35);
     			if (detaching) detach(t59);
-    			if (detaching) detach(div51);
+    			if (detaching) detach(div50);
     			destroy_component(checkbox0);
     			destroy_component(radio0);
     			destroy_component(radio1);
@@ -19750,8 +19754,7 @@ let keywordsFunction = function (item) {
     			destroy_component(checkbox2);
     			destroy_component(input3);
     			destroy_component(input4);
-    			destroy_component(input5);
-    			if (detaching) detach(t72);
+    			if (detaching) detach(t71);
     			if (detaching) detach(pre);
     		}
     	};
@@ -19808,12 +19811,12 @@ let keywordsFunction = function (item) {
     		$$invalidate(6, disabled2);
     	}
 
-    	function input4_value_binding(value) {
+    	function input3_value_binding(value) {
     		color2 = value;
     		$$invalidate(5, color2);
     	}
 
-    	function input5_value_binding(value) {
+    	function input4_value_binding(value) {
     		selectedValue = value;
     		$$invalidate(7, selectedValue);
     	}
@@ -19836,8 +19839,8 @@ let keywordsFunction = function (item) {
     		input1_value_binding,
     		input2_value_binding,
     		checkbox2_checked_binding,
-    		input4_value_binding,
-    		input5_value_binding
+    		input3_value_binding,
+    		input4_value_binding
     	];
     }
 
