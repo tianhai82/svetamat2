@@ -58,7 +58,7 @@
   }
 
   $: labelTopPadding = `transform:translateY(${$y}rem);`;
-  $: helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`;
+  $: helperTextCls = `text-sm px-2 font-light min-h-5 ${helperTextColor}`;
 
   let labelCls =
     "absolute left-0 px-2 text-sm text-gray-600 pointer-events-none";

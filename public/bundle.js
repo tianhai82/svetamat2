@@ -1892,7 +1892,7 @@ var app = (function () {
     		}
 
     		if ($$self.$$.dirty[0] & /*helperTextColor*/ 33554432) {
-    			 $$invalidate(19, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
+    			 $$invalidate(19, helperTextCls = `text-sm px-2 font-light min-h-5 ${helperTextColor}`);
     		}
 
     		if ($$self.$$.dirty[0] & /*value*/ 1) {
@@ -2386,7 +2386,7 @@ var app = (function () {
     		}
 
     		if ($$self.$$.dirty[0] & /*helperTextColor*/ 134217728) {
-    			 $$invalidate(20, helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`);
+    			 $$invalidate(20, helperTextCls = `text-sm px-2 font-light min-h-5 ${helperTextColor}`);
     		}
 
     		if ($$self.$$.dirty[0] & /*icon*/ 8) {

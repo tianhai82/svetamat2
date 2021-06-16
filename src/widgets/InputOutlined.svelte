@@ -56,7 +56,7 @@
   }
 
   $: labelTranslateStyle = `transform:translateY(${$y}rem);`;
-  $: helperTextCls = `text-sm px-2 font-light h-5 ${helperTextColor}`;
+  $: helperTextCls = `text-sm px-2 font-light min-h-5 ${helperTextColor}`;
 
   let fieldsetCls = "border border-gray-500";
   let labelCls = "text-gray-600 ";
