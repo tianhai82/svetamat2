@@ -19,13 +19,12 @@ export let password = false;
 export let date = false;
 export let min = null;
 export let max = null;
-export let autocomplete;
 
 </script>
 {#if !outlined}
   <InputStd {label} bind:value={value} {borderColor} {labelColor} {helperText} {icon}
             {number} {clearable} {disabled} {hideDetails} {readonly} {password} {date}
-            {min} {max} {autocomplete}
+            {min} {max}
             on:focus
             on:blur
             on:keydown
@@ -36,7 +35,7 @@ export let autocomplete;
 {:else}
   <InputOutlined {label} bind:value={value} {borderColor} {labelColor} {helperText} {icon}
                  {number} {clearable} {disabled} {hideDetails} {readonly} {password} {date}
-                 {min} {max} {autocomplete}
+                 {min} {max}
                  on:focus
                  on:blur
                  on:keydown
